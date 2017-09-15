@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Backgrounds */
+.white { background-color: #FFFFFF; }
+.black { background-color: #000000; }
+.yellow { background-color: #EDB63F;}
+.orange { background-color: #DD8335;}
+.red { background-color: #D03A43;}
+.violet { background-color: #A6315D;}
+.indigo { background-color: #734488;}
+.blue { background-color: #3868A6;}
+.cyan { background-color: #449C76;}
+.green { background-color: #88B25C;}
+.red-primary { background-color: #DD0330; }
+.light-green { background-color: #6AB73E; }
+
+
+/* Text */
+.white-text { color: white; }
+.black-text { color: #000000; }
+.yellow-text { color: #EDB63F;}
+.orange-text { color: #DD8335;}
+.red-text { color: #D03A43;}
+.violet-text { color: #A6315D;}
+.indigo-text { color: #734488;}
+.blue-text { color: #3868A6;}
+.cyan-text { color: #449C76;}
+.green-text { color: #88B25C;}
+.light-green-text { color: #6AB73E; }

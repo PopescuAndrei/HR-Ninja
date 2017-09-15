@@ -1,0 +1,22 @@
+<div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+        <a [routerLink]="['/candidates', candidate.id]" >
+            <div class="panel-body">
+                <img [src]="candidate.avatar" 
+                    class="img-responsive img-responsive infinite pulse" alt="Responsive image">
+                <h3 class="candidate-name">{{candidate.firstName}} {{candidate.lastName}}</h3>
+                <p class="candidate-description">{{candidate.description}}</p>
+                
+                <hr [style.backgroundColor]="candidate.color" style="height:2px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="butotn" class="btn"><i class="fa fa-comment" aria-hidden="true" [routerLink]="['/candidate/:id/comments']"></i> {{candidate.comments}}</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{candidate.likes}}</button>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="container-fluid">
+  <div *ngFor="let candidateRow of candidates" class="row active-with-click">
+    <candidate-card *ngFor="let candidate of candidateRow" [candidate]="candidate"></candidate-card>
+  </div>
+</div>

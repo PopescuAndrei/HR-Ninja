@@ -1,0 +1,59 @@
+<div class="row row-custom" style="padding-top:15px;">
+    <div class="col-md-8">
+        <div class="detailBox">
+            <div class="titleBox">
+                <label>Comments</label>
+            </div>
+            <div class="actionBox">
+                <ul class="commentList">
+                    <li *ngFor="let comment of comments">
+                        <div class="commenterImage">
+                            <img [src]="comment.avatarSrc"/>
+                        </div>
+                        <div class="commentText">
+                            <p><strong class="text-dark-color">{{comment.author}}: </strong>{{comment.message}}</p> <span class="date sub-text">on {{ comment.date | date: 'medium' }}</span>
+
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <input class="form-control" type="text" ngModel="newComment.message" placeholder="Add comment..." required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-round dark-primary-color" type="submit" value="Add Comment" (click)="create(newComment)">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>    
+    </div>
+
+    <div class="col-md-4">
+        <div class="detailBox">
+            <div class="titleBox">
+                <label>Comments</label>
+            </div>
+            <div class="actionBox">
+                <ul class="commentList">
+                    <li *ngFor="let comment of comments">
+                        <div class="commenterImage">
+                            <img [src]="comment.avatarSrc"/>
+                        </div>
+                        <div class="commentText">
+                            <p><strong class="text-dark-color">{{comment.author}}: </strong>{{comment.message}}</p> <span class="date sub-text">on {{ comment.date | date: 'medium' }}</span>
+
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <input class="form-control" type="text" ng-model="newComment.message" placeholder="Add comment..." required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-round dark-primary-color" type="submit" value="Add Comment" ng-click="create(newComment)">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>    
+    </div>
+</div>
