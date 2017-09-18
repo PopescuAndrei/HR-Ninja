@@ -1,3 +1,6 @@
+import { CandidateListItemComponent } from './positions/candidate-list-item/candidate-list-item.component';
+import { ExperienceTimelineComponent } from './candidates/experience-timeline/experience-timeline.component';
+import { AppStoreService } from './app-store.service';
 import { CommentViewComponent } from './candidates/comment-view/comment-view.component';
 import { LanguageTableComponent } from './candidates/language-table/language-table.component';
 import { EducationTimelineComponent } from './candidates/education-timeline/education-timeline.component';
@@ -8,7 +11,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { PositionsComponent } from './positions/positions.component';
 import { CandidateViewComponent } from './candidates/candidate-view/candidate-view.component';
 import { CandidatesComponent } from './candidates/candidates.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -30,8 +33,10 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     CandidatesComponent,
     LanguageTableComponent,
     CommentViewComponent,
+    ExperienceTimelineComponent,
     EducationTimelineComponent,
     CandidateViewComponent,
+    CandidateListItemComponent,
     PositionsComponent,
     SettingsComponent,
     InterviewComponent
@@ -39,6 +44,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(AppRoutes),
     SidebarModule,

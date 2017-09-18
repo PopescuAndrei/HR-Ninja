@@ -1,8 +1,4 @@
 <div class="container-fluid">
-    <p>
-        <a [routerLink]="['/candidates']">Go back</a>
-    </p>  
-
     <div class="row"><!-- ROW -->
         <div class="col-lg-4 col-md-5">
             <div class="card card-user">
@@ -22,10 +18,12 @@
                 <div class="text-center">
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1">
-                            <h5 [routerLink]="['/candidates', candidate.id, '/comments']" >
-                            <span class="cyan-text">{{candidate.comments}}</span>
-                            <br /><small>Comments</small>
-                            </h5>
+                            <a [routerLink]="['/candidates', candidate.id, 'comments']">
+                                <h5>
+                                    <span class="cyan-text">{{candidate.comments}}</span>
+                                    <br /><small>Comments</small>
+                                </h5>
+                            </a>
                         </div>
                         <div class="col-md-4">
                             <h5>
@@ -77,12 +75,22 @@
     </div><!-- END ROW -->
 
     <div class="row">
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-6 col-md-6" style="height: 477px;">
+            <div class="card card-user white-background">
+                <div class="image white">
+                    <h2 class="text-center indigo-text" style="vertical-align: middle;"><strong>Experience</strong></h2>
+                </div>
+                <div class="content" style="height: 362px; overflow-x: hidden">
+                    <experience-timeline [candidateExperience]="candidateExperience"></experience-timeline>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6" style="height: 477px;">
             <div class="card card-user white-backgound">
                 <div class="image white">
                     <h2 class="text-center indigo-text" style="vertical-align: middle;"><strong>Education</strong></h2>
                 </div>
-                <div class="content" >
+                <div class="content" style="height: 362px; overflow-x: hidden">
                     <education-timeline [candidateEducation]="candidateEducation"></education-timeline>
                 </div>
             </div>

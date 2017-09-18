@@ -2,15 +2,14 @@
     <div class="panel panel-default">
         <a [routerLink]="['/candidates', candidate.id]" >
             <div class="panel-body">
-                <img [src]="candidate.avatar" 
-                    class="img-responsive img-responsive infinite pulse" alt="Responsive image">
-                <h3 class="candidate-name">{{candidate.firstName}} {{candidate.lastName}}</h3>
-                <p class="candidate-description">{{candidate.description}}</p>
+                <img [src]="candidate.avatar" class="img-responsive img-responsive infinite pulse img-center" alt="Responsive image">
+                <h3 class="candidate-name text-center">{{candidate.firstName}} {{candidate.lastName}}</h3>
+                <p class="candidate-description text-center">{{candidate.description}}</p>
                 
                 <hr [style.backgroundColor]="candidate.color" style="height:2px;">
                 <div class="row">
                     <div class="col-md-6">
-                        <button type="butotn" class="btn"><i class="fa fa-comment" aria-hidden="true" [routerLink]="['/candidate/:id/comments']"></i> {{candidate.comments}}</button>
+                        <button type="butotn" class="btn"><i class="fa fa-comment" aria-hidden="true" [routerLink]="['/candidates', candidate.id, 'comments']"></i> {{candidate.comments}}</button>
                     </div>
                     <div class="col-md-6">
                         <button type="button" class="btn"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{candidate.likes}}</button>

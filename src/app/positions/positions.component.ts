@@ -1,3 +1,5 @@
+import { CandidatesService } from './../candidates/candidates.service';
+import { Candidate } from './../domain/candidate';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positions.component.css']
 })
 export class PositionsComponent implements OnInit {
-
-  constructor() { }
+  candidates: Array<Candidate[]>
+  
+  constructor(private candidateService: CandidatesService) { }
 
   ngOnInit() {
+    this.candidates = this.candidateService.getCandidates();
   }
 
 }

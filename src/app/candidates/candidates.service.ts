@@ -1,5 +1,7 @@
+import { Experience } from './../domain/experience';
 import { Language } from '../domain/language';
-import { CANDIDATES, EDUCATION, INTERESTS, LANGUAGES, SKILLS } from './../domain/mocks';
+import { Comment } from '../domain/comment';
+import { CANDIDATES, COMMENTS, EDUCATION, INTERESTS, LANGUAGES, SKILLS, EXPERIENCES } from './../domain/mocks';
 import { Education } from './../domain/education';
 import { Skill } from '../domain/skill';
 import { Candidate } from './../domain/candidate';
@@ -27,7 +29,15 @@ export class CandidatesService {
         return INTERESTS;
     }
 
+    getExperienceForCandidate(): Array<Experience> {
+        return EXPERIENCES;
+    }
+
     getLanguagesForCandidate(): Array<Language> {
         return LANGUAGES;
+    }
+
+    getCommentsForCandidate(): Array<Comment> {
+        return COMMENTS;
     }
 }

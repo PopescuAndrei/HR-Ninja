@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Experience } from './../../domain/experience';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'experience-timeline',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experience-timeline.component.css']
 })
 export class ExperienceTimelineComponent implements OnInit {
+  
+  @Input()
+  candidateExperience: Array<Experience>;
 
   constructor() { }
 

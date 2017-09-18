@@ -1,3 +1,4 @@
+import { Experience } from './../../domain/experience';
 import { Language } from '../../domain/language';
 import { Education } from './../../domain/education';
 import { Skill } from './../../domain/skill';
@@ -19,7 +20,8 @@ export class CandidateViewComponent implements OnInit {
   private candidateEducation: Array<Education>;
   private candidateInterests: Array<any>;
   private candidateLanguages: Array<Language>;
-
+  private candidateExperience: Array<Experience>;
+  
   constructor(private route: ActivatedRoute, private candidateService: CandidatesService) { }
 
   ngOnInit() {
@@ -33,9 +35,6 @@ export class CandidateViewComponent implements OnInit {
     this.candidateEducation = this.candidateService.getEducationForCandidate();
     this.candidateInterests = this.candidateService.getInterestsForCandidate();
     this.candidateLanguages = this.candidateService.getLanguagesForCandidate();
-  }
-
-  goToMessage() {
-    this.route.params.for
+    this.candidateExperience = this.candidateService.getExperienceForCandidate();
   }
 }
