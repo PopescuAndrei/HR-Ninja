@@ -1,3 +1,5 @@
+import { Position } from './../domain/position';
+import { PositionsService } from './positions.service';
 import { CandidatesService } from './../candidates/candidates.service';
 import { Candidate } from './../domain/candidate';
 import { Component, OnInit } from '@angular/core';
@@ -8,12 +10,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positions.component.css']
 })
 export class PositionsComponent implements OnInit {
-  candidates: Array<Candidate[]>
+  positions: Array<Position[]>
   
-  constructor(private candidateService: CandidatesService) { }
+  constructor(private positionsService: PositionsService) { }
 
   ngOnInit() {
-    this.candidates = this.candidateService.getCandidates();
+    this.positions = this.positionsService.getPositions();
   }
 
 }

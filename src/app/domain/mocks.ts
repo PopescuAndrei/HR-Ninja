@@ -1,3 +1,4 @@
+import { Position } from './position';
 import { Experience } from './experience';
 import { Language } from './language';
 import { Education } from './education';
@@ -53,7 +54,28 @@ export const EXPERIENCES = [
     new Experience("Software Engineer", "Ericsson","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "January 2016 - present"),
     new Experience("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2015 - October 2015"),
     new Experience("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2014 - October 2014"),
-]
+];
+
+export const POSITIONS: Array<Position[]> = [
+    [
+    new Position("Senior Java Developer", 
+        "Work with the latest technologies, enhance and evolve together with the projects", 
+        [new Skill("Java", 78), new Skill("Angular", 50)], 
+        new Date("18.09.2017")),
+    new Position("Senior Architect", 
+        "Work with Cloud Architectures, build and enhance existing ones.", 
+        [new Skill("Java", 90), new Skill("Angular", 70)], 
+        new Date("18.08.2017"))
+    ], [
+        new Position("Senior Java Developer", 
+            "Work with the latest technologies, enhance and evolve together with the projects", 
+            [new Skill("Java", 78), new Skill("Angular", 50)], 
+            new Date("18.09.2017")),
+        new Position("Senior Architect", 
+            "Work with Cloud Architectures, build and enhance existing ones.", 
+            [new Skill("Java", 90), new Skill("Angular", 70)], 
+            new Date("18.08.2017"))
+    ]];
 
 export const INTERESTS: Array<any> = [
     {

@@ -1,3 +1,4 @@
+import { PositionCardComponent } from './positions/position-card/position-card.component';
 import { CandidateListItemComponent } from './positions/candidate-list-item/candidate-list-item.component';
 import { ExperienceTimelineComponent } from './candidates/experience-timeline/experience-timeline.component';
 import { AppStoreService } from './app-store.service';
@@ -24,6 +25,7 @@ import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule} from './shared/navbar/navbar.module';
 
 import { DashboardComponent }   from './dashboard/dashboard.component'
+import { PositionsService } from './positions/positions.service';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     EducationTimelineComponent,
     CandidateViewComponent,
     CandidateListItemComponent,
+    PositionCardComponent,
     PositionsComponent,
     SettingsComponent,
     InterviewComponent
@@ -51,7 +54,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     NavbarModule,
     FooterModule,
   ],
-  providers: [CandidatesService],
+  providers: [CandidatesService, PositionsService, AppStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

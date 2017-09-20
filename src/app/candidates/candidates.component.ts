@@ -9,12 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatesComponent implements OnInit {
 
-  positionCandidates: Array<Candidate[]>
+  candidates: Array<Candidate[]>
 
   constructor(private candidateService: CandidatesService) { }
 
   ngOnInit() {
-    this.positionCandidates = this.candidateService.getCandidates();
+    this.candidates = this.candidateService.getCandidates();
   }
 
 }

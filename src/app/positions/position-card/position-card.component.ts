@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Position } from './../../domain/position';
+import { PositionsComponent } from '../positions.component';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'position-card',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PositionCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() position: Position;
+  
+  constructor(private positionsComponent: PositionsComponent) { }
 
   ngOnInit() {
   }
