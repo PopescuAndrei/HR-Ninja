@@ -1,12 +1,17 @@
 <div class="col-md-6 col-sm-6 col-xs-12">
-    <li class="cards__item">
-        <div class="card">
-          <div class="card__image card__image--fence"></div>
-          <div class="card__content">
-            <div class="card__title">Flex</div>
-            <p class="card__text">This is the shorthand for flex-grow, flex-shrink and flex-basis combined. The second and third parameters (flex-shrink and flex-basis) are optional. Default is 0 1 auto. </p>
-            <button class="btn btn--block card__btn">Button</button>
-          </div>
-        </div>
-  </li>
+    <div class="card">
+      <div class="card_image">
+        <img [src]="position.image" alt="{{position.name}}" class="image">
+        <i class="material-icons" onClick="favorite(this);">
+        favorite_border</i>
+      </div><div class="cardContent">
+        <button class="cardContentButton"><i class="material-icons">Read more</i></button>
+        <p class="cardContentName">{{position.name}}</p>
+        <p class="cardContentJob">{{position.creationDate | date: 'medium'}}</p>
+        <div class="titleSocial">Follow me</div>
+        <ul class="menuSocial">
+          <li class="menuSocialItem"><a href="https://twitter.com/JuanBeatoPR" class="menuSocialItemLink icon-twitter"></a></li><li class="menuSocialItem"><a href="https://www.facebook.com/juanantonio.beatoquinones" class="menuSocialItemLink icon-facebook2"></a></li><li class="menuSocialItem"><a href="https://plus.google.com/u/0/+JuanAntonioBeatoQui%C3%B1ones/posts" class="menuSocialItemLink icon-google-plus2"></a></li><li class="menuSocialItem"><a href="https://es.linkedin.com/in/juanbeato" class="menuSocialItemLink icon-linkedin2"></a></li>
+        </ul>
+      </div>
+    </div>
 </div>

@@ -61,20 +61,20 @@ export const POSITIONS: Array<Position[]> = [
     new Position("Senior Java Developer", 
         "Work with the latest technologies, enhance and evolve together with the projects", 
         [new Skill("Java", 78), new Skill("Angular", 50)], 
-        new Date("18.09.2017")),
+        new Date("2016-01-01T23:28:56.782Z")),
     new Position("Senior Architect", 
         "Work with Cloud Architectures, build and enhance existing ones.", 
         [new Skill("Java", 90), new Skill("Angular", 70)], 
-        new Date("18.08.2017"))
+        new Date("2016-01-01T23:28:56.782Z"))
     ], [
         new Position("Senior Java Developer", 
             "Work with the latest technologies, enhance and evolve together with the projects", 
             [new Skill("Java", 78), new Skill("Angular", 50)], 
-            new Date("18.09.2017")),
+            new Date("2016-01-01T23:28:56.782Z")),
         new Position("Senior Architect", 
             "Work with Cloud Architectures, build and enhance existing ones.", 
             [new Skill("Java", 90), new Skill("Angular", 70)], 
-            new Date("18.08.2017"))
+            new Date("2016-01-01T23:28:56.782Z"))
     ]];
 
 export const INTERESTS: Array<any> = [
