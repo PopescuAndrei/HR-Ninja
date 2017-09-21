@@ -2,13 +2,15 @@ import { POSITION_BACKGROUNDS } from './constants';
 import { Skill } from './skill';
 
 export class Position {
+	id: number;
 	name: string;
 	description: string;
 	requirements: Array<Skill>
 	creationDate : Date;
 	image: string;
 
-    constructor(name: string, description: string, requirements: Array<Skill>, creationDate: Date) {
+    constructor(id:number, name: string, description: string, requirements: Array<Skill>, creationDate: Date) {
+		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.requirements = requirements;

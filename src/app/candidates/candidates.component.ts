@@ -1,5 +1,5 @@
+import { CandidatesService } from './../services/candidates.service';
 import { Candidate } from './../domain/candidate';
-import { CandidatesService } from './candidates.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

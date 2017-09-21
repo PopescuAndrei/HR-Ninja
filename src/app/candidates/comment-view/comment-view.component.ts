@@ -1,7 +1,7 @@
+import { CandidatesService } from './../../services/candidates.service';
 import { User } from './../../domain/user';
 import { AppStoreService } from './../../app-store.service';
 import { ActivatedRoute, Params } from '@angular/router';
-import { CandidatesService } from './../candidates.service';
 import { Comment } from './../../domain/comment';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';

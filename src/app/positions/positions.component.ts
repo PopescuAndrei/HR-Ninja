@@ -1,6 +1,5 @@
+import { PositionsService } from './../services/positions.service';
 import { Position } from './../domain/position';
-import { PositionsService } from './positions.service';
-import { CandidatesService } from './../candidates/candidates.service';
 import { Candidate } from './../domain/candidate';
 import { Component, OnInit } from '@angular/core';
 

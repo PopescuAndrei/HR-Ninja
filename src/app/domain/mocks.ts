@@ -1,3 +1,4 @@
+import { ChatMessage } from './chat-message';
 import { Position } from './position';
 import { Experience } from './experience';
 import { Language } from './language';
@@ -5,6 +6,9 @@ import { Education } from './education';
 import { Skill } from './skill';
 import { Candidate } from './candidate';
 import { Comment } from './comment';
+
+let GENERIC_CANDIDATE: Candidate = new Candidate(1, 'Popescu', 'Andrei','andrei.popescu93@gmail.com', 'male',  'Awesome description', 23, 45, 9, '#EDB63F');
+let CHAT_BOT: Candidate = new Candidate(0, 'HR', 'Ninja', 'hr@ninja.com', 'male');
 
 export const CANDIDATES: Array<Candidate[]> = [
     [
@@ -58,24 +62,40 @@ export const EXPERIENCES = [
 
 export const POSITIONS: Array<Position[]> = [
     [
-    new Position("Senior Java Developer", 
+    new Position(1, "Senior Java Developer", 
         "Work with the latest technologies, enhance and evolve together with the projects", 
         [new Skill("Java", 78), new Skill("Angular", 50)], 
         new Date("2016-01-01T23:28:56.782Z")),
-    new Position("Senior Architect", 
+    new Position(2, "Senior Architect", 
         "Work with Cloud Architectures, build and enhance existing ones.", 
         [new Skill("Java", 90), new Skill("Angular", 70)], 
         new Date("2016-01-01T23:28:56.782Z"))
     ], [
-        new Position("Senior Java Developer", 
+        new Position(3, "Senior Java Developer", 
             "Work with the latest technologies, enhance and evolve together with the projects", 
             [new Skill("Java", 78), new Skill("Angular", 50)], 
             new Date("2016-01-01T23:28:56.782Z")),
-        new Position("Senior Architect", 
+        new Position(4, "Senior Architect", 
             "Work with Cloud Architectures, build and enhance existing ones.", 
             [new Skill("Java", 90), new Skill("Angular", 70)], 
             new Date("2016-01-01T23:28:56.782Z"))
     ]];
+
+export const CONVERSATION: Array<ChatMessage> = [
+    new ChatMessage(1, this.GENERIC_CANDIDATE, "Hello"),
+    new ChatMessage(2, this.CHAT_BOT, "Hello. Nice to meet you. How can I help you?"),
+    new ChatMessage(3, this.GENERIC_CANDIDATE, "I would like to know about the open Java Position"),
+    new ChatMessage(4, this.CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in."),
+    new ChatMessage(5, this.GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One"),
+    new ChatMessage(6, this.CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?"),
+    new ChatMessage(7, this.GENERIC_CANDIDATE, "I'll answer your questions."),
+    new ChatMessage(8, this.CHAT_BOT, "What's your education?"),
+    new ChatMessage(9, this.GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually."),
+    new ChatMessage(10, this.CHAT_BOT, "That's great. Anything else?"),
+    new ChatMessage(11, this.GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years."),
+    new ChatMessage(12, this.CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!"),
+    new ChatMessage(13, this.GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!")
+];
 
 export const INTERESTS: Array<any> = [
     {

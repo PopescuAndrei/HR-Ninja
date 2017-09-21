@@ -1,9 +1,9 @@
+import { CandidatesService } from './../../services/candidates.service';
 import { Experience } from './../../domain/experience';
 import { Language } from '../../domain/language';
 import { Education } from './../../domain/education';
 import { Skill } from './../../domain/skill';
 import { Candidate } from './../../domain/candidate';
-import { CandidatesService } from '../candidates.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -28,7 +28,7 @@ export class CandidateViewComponent implements OnInit {
     //here we should have the api call
     this.route.params.forEach(
       (params: Params) => this.candidateId = params['id']
-    )
+    );
 
     this.candidate = new Candidate(this.candidateId, "Andrei","Popescu","andrei.popescu93@gmail.com",'male', "Dude, you're lucky i'm backing you up", 25, 43, 4.8);
     this.candidateSkills = this.candidateService.getSkillsForCandidate();

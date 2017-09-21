@@ -18,7 +18,8 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css"
+        "styles.css",
+        "pallete.css"
       ],
       "scripts": [
           "../node_modules/jquery/dist/jquery.js",

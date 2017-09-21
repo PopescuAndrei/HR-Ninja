@@ -11,6 +11,7 @@ export class Candidate {
     comments?: number;
     rating?: number;
     color?: string;
+    score? : number;
 
     constructor(id: number, firstName: string, lastName: string, email:string, gender: string, description?: string, likes?: number, comments?: number, rating?: number, color?: string) {
         this.id = id;
@@ -25,6 +26,7 @@ export class Candidate {
         this.color = color;
 
         this.setAvatar();
+        this.score = Math.floor(Math.random() * 100) + 1;
     }
 
     private setAvatar() {

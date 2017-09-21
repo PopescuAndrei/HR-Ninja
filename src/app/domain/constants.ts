@@ -12,6 +12,9 @@ export const FEMALE_AVATARS: Array<string> = [
 
 export const POSITION_BACKGROUNDS: Array<string> = [
     'assets/img/pos-bg/1.jpg',
-    'assets/img/pos-bg/2.jpg',
-    'assets/img/pos-bg/3.jpg'
+    'assets/img/pos-bg/2.png',
+    'assets/img/pos-bg/3.png',
+    'assets/img/pos-bg/4.jpg',
+    'assets/img/pos-bg/5.png',
+    'assets/img/pos-bg/6.jpg'
 ]

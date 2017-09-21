@@ -1,3 +1,5 @@
+import { ChatViewComponent } from './candidates/chat-view/chat-view.component';
+import { PositionViewComponent } from './positions/position-view/position-view.component';
 import { CommentViewComponent } from './candidates/comment-view/comment-view.component';
 import { SettingsComponent } from './settings/settings.component';
 import { InterviewComponent } from './interview/interview.component';
@@ -25,8 +27,14 @@ export const AppRoutes: Routes = [
         path: 'candidates/:id/comments',
         component: CommentViewComponent
     }, {
+        path: 'candidates/:id/chat',
+        component: ChatViewComponent
+    }, {
         path: 'positions',
         component: PositionsComponent
+    }, {
+        path: 'positions/:id',
+        component: PositionViewComponent
     }, {
         path: 'interview',
         component: InterviewComponent
