@@ -1,3 +1,6 @@
+import { QuestionCardComponent } from './interview/question-card/question-card.component';
+import { QuestionsService } from './services/questions.service';
+import { DragulaModule } from 'ng2-dragula/components/dragular.module';
 import { ChatViewComponent } from './candidates/chat-view/chat-view.component';
 import { PositionsService } from './services/positions.service';
 import { CandidatesService } from './services/candidates.service';
@@ -32,22 +35,12 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DashboardComponent,
-    CandidatesComponent,
-    CandidateCardComponent,
-    LanguageTableComponent,
-    CommentViewComponent,
-    ChatViewComponent,
-    ExperienceTimelineComponent,
-    EducationTimelineComponent,
-    CandidateViewComponent,
-    CandidateListItemComponent,
-    PositionsComponent,
-    PositionCardComponent,
-    PositionViewComponent,
-    SettingsComponent,
-    InterviewComponent
+    AppComponent, DashboardComponent,
+    CandidatesComponent, CandidateCardComponent, LanguageTableComponent, CommentViewComponent, ChatViewComponent,
+    ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
+    PositionsComponent, PositionCardComponent, PositionViewComponent, CandidateListItemComponent,
+    InterviewComponent, QuestionCardComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,9 +51,9 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     SidebarModule,
     NavbarModule,
     FooterModule,
-    RoundProgressModule,
+    DragulaModule
   ],
-  providers: [CandidatesService, PositionsService, AppStoreService],
+  providers: [CandidatesService, PositionsService, QuestionsService, AppStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

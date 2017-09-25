@@ -1,3 +1,4 @@
+import { ChatMessage } from '../../domain/chat-message';
 import { CandidatesService } from './../../services/candidates.service';
 import { Experience } from './../../domain/experience';
 import { Language } from '../../domain/language';

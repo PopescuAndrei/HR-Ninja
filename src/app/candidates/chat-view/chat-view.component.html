@@ -1,3 +1,17 @@
-<p>
-  chat-view works!
-</p>
+<div class="chat-history">
+  <ul>
+    <li *ngFor="let message of candidateConversation" class="chat-item list-no-bullets"
+      [ngClass]="{'chat-item--me': message.from.id > 0, 'chat-item--other':message.from.id === 0}">
+      <img *ngIf="message.from.id > 0" [src]="message.from.avatar" alt="{{message.from.firstName}} {{message.from.lastName}}" />
+      <div class="message">
+        <span class="message__user-name">{{message.from.firstName}} {{message.from.lastName}}</span>
+        <time class="message__time">
+          <i class="fa fa-clock-o"></i>
+          {{message.time | date: 'mediumTime'}}
+        </time>
+        <p class="message__text">{{message.message}}</p>
+      </div>
+      <img *ngIf="message.from.id === 0" [src]="message.from.avatar" alt="{{message.from.firstName}} {{message.from.lastName}}" />
+    </li>
+  </ul>
+</div>

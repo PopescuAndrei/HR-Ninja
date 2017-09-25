@@ -1,3 +1,15 @@
-<p>
-  question-card works!
-</p>
+<div class="card card-shadow">
+    <div class="card-header">
+      to <span class="title">Wade Wilson</span>
+      <span class="note"><strong>No. </strong>{{question.position}}</span>
+    </div>
+    <div class="card-body">
+      {{question.question}}<i id="♥"></i>
+    </div>
+    <div class="card-footer">
+        <div class="button-group float-right">
+            <button class="card-button">Forward</button>
+            <button class="card-button button-reply">Reply</button>
+        </div>
+    </div>
+</div>

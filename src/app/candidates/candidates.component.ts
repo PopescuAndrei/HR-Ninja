@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatesComponent implements OnInit {
 
-  candidates: Array<Candidate[]>
+  candidates: Array<Candidate[]>;
 
   constructor(private candidateService: CandidatesService) { }
 

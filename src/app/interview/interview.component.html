@@ -1,3 +1,8 @@
-<p>
-  interview works!
-</p>
+<div class="container-fluid" >
+  <div class="status">{{msg}}</div>
+  <ul [dragula]="'questions-bag'" [dragulaModel]="questions">
+    <li *ngFor="let question of questions" class="list-no-bullets">
+      <question-card [question]="question" [attr.data-id]="question.id"></question-card>
+    </li>
+  </ul>
+</div>

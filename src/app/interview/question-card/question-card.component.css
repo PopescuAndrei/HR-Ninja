@@ -1,0 +1,123 @@
+.card {
+	width:300px;
+	margin: 0 auto;
+	margin-bottom: 3em;
+	background: white;
+  }
+  
+  .card-shadow {
+	box-shadow: 0 10px 25px -10px #333;
+  }
+  
+  .card-header {
+	display: block;
+	position: relative;
+	padding: 1em;
+	border-bottom: 1px solid #eee;
+  /*   box-shadow: 0 1px 10px -5px #333; */
+	color: black;
+	
+	width: calc(100% - 2em);
+	font-size: 13.333px;
+  }
+  
+  .card-header .title {
+	position: relative;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: black;
+  }
+  
+  .card-header .note {
+	position: absolute;
+	right: 1em;
+	color: #777;
+  }
+  
+  .card-body {
+	display: block;
+	padding: 1em 2em;
+	font-family: Cabin;
+	  font-size: 16px;
+	line-height: 1.5em;
+	
+	transition: 0.5s all;
+  }
+  
+  .card-body * {
+	margin-bottom: 1em;
+  }
+  
+  .card-body-input {
+	  outline: 0;
+	  -webkit-appearance: none;
+	  background: transparent;
+	  white-space: pre-wrap;
+  }
+  
+  .card-body-input-ta {
+	  border: 0;
+	  outline: 0;
+	  display: block;
+	  width: calc(100% - 4em);
+	  -webkit-appearance: none;
+	  background: transparent;
+	  white-space: pre-wrap;
+	  
+	  resize: vertical;
+	font-family: Cabin;
+	  font-size: initial;
+	line-height: initial;
+  }
+  
+  /* CARD FOOTER */
+  
+  .card-footer {
+	display: block;
+	border-top: 1px solid #eee;
+	width: 100%;
+	overflow: hidden;
+  }
+  
+  /* CARD BUTTONS */
+  
+  .card-footer .card-button {
+	padding: 0 1em;
+	height: 50px;
+	border: 0;
+  /*   border-left: 2px solid #bbb; */
+	outline: 0;
+	background: transparent;
+	
+	line-height: 50px;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 600;
+	font-family: Open Sans;
+	
+	transition: 0.2s color, 0.2s background-color;
+  }
+
+  .float-right {
+	  float: right;
+  }
+  
+  .float-left {
+	  float: left;
+  }
+  
+  .card-footer .card-button:hover {
+	color: #ff0040;
+  /*   background: #ff0040; */
+  }
+  
+  .card-footer .card-button:active {
+	color: #b3002d;
+  /*   background: #b3002d; */
+  }
+  
+  #♥::before {
+	  content: "♥";
+	  font-style: normal;
+	  color: #cc0033;
+  }

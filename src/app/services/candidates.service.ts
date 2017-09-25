@@ -1,7 +1,8 @@
+import { ChatMessage } from '../domain/chat-message';
 import { Experience } from './../domain/experience';
 import { Language } from '../domain/language';
 import { Comment } from '../domain/comment';
-import { CANDIDATES, COMMENTS, EDUCATION, INTERESTS, LANGUAGES, SKILLS, EXPERIENCES } from './../domain/mocks';
+import { CANDIDATES, COMMENTS, EDUCATION, INTERESTS, LANGUAGES, SKILLS, EXPERIENCES, CONVERSATION } from './../domain/mocks';
 import { Education } from './../domain/education';
 import { Skill } from '../domain/skill';
 import { Candidate } from './../domain/candidate';
@@ -39,5 +40,9 @@ export class CandidatesService {
 
     getCommentsForCandidate(): Array<Comment> {
         return COMMENTS;
+    }
+
+    getConversation(): Array<ChatMessage> {
+        return CONVERSATION;
     }
 }
