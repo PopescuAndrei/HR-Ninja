@@ -17,4 +17,11 @@ export class QuestionCardComponent implements OnInit {
   ngOnInit() {
   }
 
+  private edit(): void {
+    console.log("Edit clicked");
+  }
+
+  private delete(): void {
+    console.log("Delete clicked");
+  }
 }

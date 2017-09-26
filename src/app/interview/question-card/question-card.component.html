@@ -1,15 +1,7 @@
-<div class="card card-shadow">
-    <div class="card-header">
-      to <span class="title">Wade Wilson</span>
-      <span class="note"><strong>No. </strong>{{question.position}}</span>
-    </div>
-    <div class="card-body">
-      {{question.question}}<i id="♥"></i>
-    </div>
-    <div class="card-footer">
-        <div class="button-group float-right">
-            <button class="card-button">Forward</button>
-            <button class="card-button button-reply">Reply</button>
-        </div>
-    </div>
+<div class="notice">
+    <strong class="position">{{question.position}}</strong> {{question.question}}
+    <span class="question-buttons" style="float:right; vertical-align: middle;">
+        <button type="button" class="btn"><i class="fa fa-pencil" aria-hidden="true" (click)="edit()"></i></button>
+        <button type="button" class="btn"><i class="fa fa-trash" aria-hidden="true" (click)="delete()"></i></button>
+    </span>
 </div>

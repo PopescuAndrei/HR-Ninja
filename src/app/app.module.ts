@@ -1,3 +1,4 @@
+import { DomUtilsService } from './services/dom-utils.service';
 import { QuestionCardComponent } from './interview/question-card/question-card.component';
 import { QuestionsService } from './services/questions.service';
 import { DragulaModule } from 'ng2-dragula/components/dragular.module';

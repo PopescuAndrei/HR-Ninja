@@ -9,7 +9,7 @@
                 <hr [style.backgroundColor]="candidate.color" style="height:2px;">
                 <div class="row">
                     <div class="col-md-6">
-                        <button type="butotn" class="btn"><i class="fa fa-comment" aria-hidden="true" [routerLink]="['/candidates', candidate.id, 'comments']"></i> {{candidate.comments}}</button>
+                        <button type="button" class="btn"><i class="fa fa-comment" aria-hidden="true" [routerLink]="['/candidates', candidate.id, 'comments']"></i> {{candidate.comments}}</button>
                     </div>
                     <div class="col-md-6">
                         <button type="button" class="btn"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{candidate.likes}}</button>

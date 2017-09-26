@@ -1,8 +1,27 @@
 <div class="container-fluid" >
-  <div class="status">{{msg}}</div>
-  <ul [dragula]="'questions-bag'" [dragulaModel]="questions">
-    <li *ngFor="let question of questions" class="list-no-bullets">
+  <div class="row">
+      <form class="form-inline form-add-question" role="form" [formGroup]="addQuestionForm">
+        <div class="col-md-8">  
+            <div class="form-group" style="width:100%;">
+              <input type="text"  style="width:100%;" class="form-control" formControlName="question" placeholder="Type in a question..." required>
+            </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group" style="width:100%;">
+            <button class="btn btn-round red white-text" style="width:100%;" type="submit" value="Add Comment" (click)="addQuestion()">Add Question</button>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="form-group" style="width:100%;">
+            <button class="btn btn-round blue white-text" style="width:100%;" type="submit" value="Save All" (click)="saveAll()">Save All</button>
+          </div>
+        </div>
+      </form>      
+  </div>
+
+  <ol [dragula]="'questions-bag'" [dragulaModel]="questions" class="questions-list list-no-bullets">
+    <li *ngFor="let question of questions">
       <question-card [question]="question" [attr.data-id]="question.id"></question-card>
     </li>
-  </ul>
+  </ol>
 </div>
