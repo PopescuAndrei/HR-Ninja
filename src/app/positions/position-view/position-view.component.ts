@@ -1,6 +1,6 @@
+import { CANDIDATES, SKILLS } from '../../util/mocks';
 import { Candidate } from './../../domain/candidate';
 import { PositionsService } from './../../services/positions.service';
-import { CANDIDATES, SKILLS } from './../../domain/mocks';
 import { Skill } from '../../domain/skill';
 import { Position } from '../../domain/position';
 import { ActivatedRoute, Params } from '@angular/router';

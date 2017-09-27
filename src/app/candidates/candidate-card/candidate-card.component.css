@@ -75,3 +75,18 @@ a{
   display:block;
   margin:auto;
 }
+
+.img-rounded {
+  border-radius: 50%;
+  border-width: 2px;
+  border-style:solid;
+}
+
+.panel {
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 20px;
+  z-index: 1;  
+  background-color: #FFFFFF;
+  color: #252422;
+}

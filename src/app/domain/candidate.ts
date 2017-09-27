@@ -1,4 +1,5 @@
-import { FEMALE_AVATARS, MALE_AVATARS } from './constants';
+import { MALE_AVATARS, FEMALE_AVATARS } from './../util/constants';
+
 export class Candidate {
     id: number;
     firstName: string;

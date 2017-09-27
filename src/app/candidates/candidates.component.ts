@@ -1,3 +1,4 @@
+import { CANDIDATES } from '../util/mocks';
 import { CandidatesService } from './../services/candidates.service';
 import { Candidate } from './../domain/candidate';
 import { Component, OnInit } from '@angular/core';
@@ -9,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidatesComponent implements OnInit {
 
-  candidates: Array<Candidate[]>;
+  candidates: Array<Array<Candidate>>;
 
   constructor(private candidateService: CandidatesService) { }
 
   ngOnInit() {
-    this.candidates = this.candidateService.getCandidates();
+    this.candidateService.getCandidates()
+      .subscribe(data => this.candidates = data,
+                error => this.candidates = CANDIDATES);
   }
 
 }

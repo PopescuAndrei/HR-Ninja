@@ -1,3 +1,8 @@
+/*Override panel*/
+.card-user {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
 .image{
     height: 70px;
 }
@@ -157,4 +162,22 @@ dl dd {
   -moz-border-radius: 8px;
   border-radius: 8px;
   margin-left:5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0.3);
 }

@@ -5,37 +5,37 @@
                 <div class="image cyan"></div>
                 <div class="content">
                     <div class="author">
-                        <img class="avatar border-white" [src]="candidate.avatar" alt="..."/>
+                        <img class="avatar border-white" [src]="candidate?.avatar || ''" alt="..."/>
                         <h4 class="title">
-                            <span class="cyan-text">{{candidate.firstName}} {{candidate.lastName}}</span>
+                            <span class="cyan-text">{{candidate?.firstName}} {{candidate?.lastName}}</span>
                             <br />
-                            <a href="#"><small><span class="black-text">{{candidate.email}}</span></small></a>
+                            <a href="#"><small><span class="black-text">{{candidate?.email}}</span></small></a>
                         </h4>
                     </div>
-                    <p class="description text-center">{{candidate.description}}</p>
+                    <p class="description text-center">{{candidate?.description}}</p>
                 </div>
                 <hr>
                 <div class="text-center">
                     <div class="row">
                         <div class="col-md-3 col-md-offset-1">
-                            <a [routerLink]="['/candidates', candidate.id, 'comments']">
+                            <a [routerLink]="['/candidates', candidateId, 'comments']">
                                 <h5>
-                                    <span class="cyan-text">{{candidate.comments}}</span>
+                                    <span class="cyan-text">{{candidate?.comments}}</span>
                                     <br /><small>Comments</small>
                                 </h5>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a [routerLink]="['/candidates', candidate.id, 'chat']">
+                            <a [routerLink]="['/candidates', candidateId, 'chat']">
                                 <h5>
-                                <span class="candidate-rating">{{candidate.likes}}</span><br />
+                                <span class="candidate-rating">{{candidate?.likes}}</span><br />
                                 <small>Likes</small>
                                 </h5>
                             </a>
                         </div>
                         <div class="col-md-3">
                             <h5>
-                            <span class="candidate-rating">{{candidate.rating}}</span>
+                            <span class="candidate-rating">{{candidate?.rating}}</span>
                             <br /><small>/5</small>
                             </h5>
                         </div>
@@ -77,22 +77,22 @@
     </div><!-- END ROW -->
 
     <div class="row">
-        <div class="col-lg-6 col-md-6" style="height: 477px;">
+        <div class="col-lg-6 col-md-6">
             <div class="card card-user white-background">
                 <div class="image white">
                     <h2 class="text-center indigo-text" style="vertical-align: middle;"><strong>Experience</strong></h2>
                 </div>
-                <div class="content" style="height: 362px; overflow-x: hidden">
+                <div class="content" style="height: 500px; overflow-x: hidden">
                     <experience-timeline [candidateExperience]="candidateExperience"></experience-timeline>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-6" style="height: 477px;">
+        <div class="col-lg-6 col-md-6">
             <div class="card card-user white-backgound">
                 <div class="image white">
                     <h2 class="text-center indigo-text" style="vertical-align: middle;"><strong>Education</strong></h2>
                 </div>
-                <div class="content" style="height: 362px; overflow-x: hidden">
+                <div class="content" style="height: 500px; overflow-x: hidden">
                     <education-timeline [candidateEducation]="candidateEducation"></education-timeline>
                 </div>
             </div>

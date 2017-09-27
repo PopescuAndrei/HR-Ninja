@@ -1,48 +1,67 @@
+import { Observable } from 'rxjs/Rx';
+import { RouterUtils } from '../util/router.utils';
+import { CANDIDATES, COMMENTS, EDUCATION, INTERESTS, LANGUAGES, SKILLS, EXPERIENCES, CONVERSATION } from '../util/mocks';
 import { ChatMessage } from '../domain/chat-message';
 import { Experience } from './../domain/experience';
 import { Language } from '../domain/language';
 import { Comment } from '../domain/comment';
-import { CANDIDATES, COMMENTS, EDUCATION, INTERESTS, LANGUAGES, SKILLS, EXPERIENCES, CONVERSATION } from './../domain/mocks';
 import { Education } from './../domain/education';
 import { Skill } from '../domain/skill';
 import { Candidate } from './../domain/candidate';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CandidatesService {
 
     constructor(private http: Http) { }
 
-    getCandidates(): Array<Candidate[]> {
-        return CANDIDATES;
+    getCandidate(candidateId: number): Observable<Candidate> {
+        return this.http
+            .get(RouterUtils.candidateUrl(candidateId))
+            .map((res: Response) => <Candidate> res.json());
     }
 
-    getSkillsForCandidate(): Array<Skill> {
-        return SKILLS;
+    getCandidates(): Observable<Array<Array<Candidate>>> {
+        return this.http
+            .get(RouterUtils.candidatesUrl())
+            .map((res: Response) => <Array<Array<Candidate>>> res.json());
     }
 
-    getEducationForCandidate(): Array<Education> {
-        return EDUCATION;
+    getCandidateSkills(candidateId: number): Observable<Array<Skill>> {
+        return this.http
+            .get(RouterUtils.candidateSkillsUrl(candidateId))
+            .map((res: Response) => <Array<Skill>> res.json());
     }
 
-    getInterestsForCandidate(): Array<any> {
-        return INTERESTS;
+    getCandidateEducation(candidateId: number): Observable<Array<Education>> {
+        return this.http
+            .get(RouterUtils.candidateEducationUrl(candidateId))
+            .map((res: Response) => <Array<Education>> res.json());
     }
 
-    getExperienceForCandidate(): Array<Experience> {
-        return EXPERIENCES;
+    getCandidateInterests(candidateId: number): Observable<Array<any>> {
+        return this.http
+            .get(RouterUtils.candidateInterestsUrl(candidateId))
+            .map((res: Response) => <Array<any>> res.json());
     }
 
-    getLanguagesForCandidate(): Array<Language> {
-        return LANGUAGES;
+    getCandidateExperience(candidateId: number): Observable<Array<Experience>> {
+        return this.http
+            .get(RouterUtils.candidateExperienceUrl(candidateId))
+            .map((res: Response) => <Array<Experience>> res.json());
     }
 
-    getCommentsForCandidate(): Array<Comment> {
-        return COMMENTS;
+    getCandidateLanguages(candidateId: number): Observable<Language[]> {
+        return this.http
+            .get(RouterUtils.candidateLanguagesUrl(candidateId))
+            .map((res: Response) => <Language[]> res.json());
     }
 
-    getConversation(): Array<ChatMessage> {
-        return CONVERSATION;
+    getCandidateComments(candidateId: number): Observable<Array<Comment>> {
+        return this.http
+            .get(RouterUtils.candidateCommentsUrl(candidateId))
+            .map((res: Response) => <Array<Comment>> res.json());
     }
 }

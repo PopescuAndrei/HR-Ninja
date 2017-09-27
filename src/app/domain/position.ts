@@ -1,4 +1,4 @@
-import { POSITION_BACKGROUNDS } from './constants';
+import { POSITION_BACKGROUNDS } from '../util/constants';
 import { Skill } from './skill';
 
 export class Position {

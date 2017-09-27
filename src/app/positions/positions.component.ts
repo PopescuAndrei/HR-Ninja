@@ -1,3 +1,4 @@
+import { POSITIONS } from './../util/mocks';
 import { PositionsService } from './../services/positions.service';
 import { Position } from './../domain/position';
 import { Candidate } from './../domain/candidate';
@@ -9,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./positions.component.css']
 })
 export class PositionsComponent implements OnInit {
-  positions: Array<Position[]>
+  positions: Array<Array<Position>>
   
   constructor(private positionsService: PositionsService) { }
 
   ngOnInit() {
-    this.positions = this.positionsService.getPositions();
+    this.positionsService.getPositions()
+      .subscribe(data => this.positions = data,
+                error => this.positions = POSITIONS);
   }
 
 }

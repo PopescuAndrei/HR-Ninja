@@ -1,3 +1,4 @@
+import { EDUCATION, EXPERIENCES, GENERIC_CANDIDATE, INTERESTS, LANGUAGES, SKILLS } from './../../util/mocks';
 import { ChatMessage } from '../../domain/chat-message';
 import { CandidatesService } from './../../services/candidates.service';
 import { Experience } from './../../domain/experience';
@@ -19,23 +20,40 @@ export class CandidateViewComponent implements OnInit {
   private candidate: Candidate;
   private candidateSkills: Array<Skill>;
   private candidateEducation: Array<Education>;
+  // TODO: Replace any with Interest
   private candidateInterests: Array<any>;
-  private candidateLanguages: Array<Language>;
   private candidateExperience: Array<Experience>;
+  private candidateLanguages: Language[];
   
   constructor(private route: ActivatedRoute, private candidateService: CandidatesService) { }
 
   ngOnInit() {
-    //here we should have the api call
     this.route.params.forEach(
       (params: Params) => this.candidateId = params['id']
     );
 
-    this.candidate = new Candidate(this.candidateId, "Andrei","Popescu","andrei.popescu93@gmail.com",'male', "Dude, you're lucky i'm backing you up", 25, 43, 4.8);
-    this.candidateSkills = this.candidateService.getSkillsForCandidate();
-    this.candidateEducation = this.candidateService.getEducationForCandidate();
-    this.candidateInterests = this.candidateService.getInterestsForCandidate();
-    this.candidateLanguages = this.candidateService.getLanguagesForCandidate();
-    this.candidateExperience = this.candidateService.getExperienceForCandidate();
+    this.candidateService.getCandidate(this.candidateId)
+      .subscribe(data => this.candidate = data,
+                error => this.candidate = GENERIC_CANDIDATE);
+                
+    this.candidateService.getCandidateEducation(this.candidateId)
+        .subscribe(data => this.candidateEducation = data,
+                  error => this.candidateEducation = EDUCATION);
+    
+    this.candidateService.getCandidateExperience(this.candidateId)
+        .subscribe(data => this.candidateExperience = data,
+                  error => this.candidateExperience = EXPERIENCES);
+
+    this.candidateService.getCandidateSkills(this.candidateId)
+      .subscribe(data => this.candidateSkills = data,
+                error => this.candidateSkills = SKILLS);
+    
+    this.candidateService.getCandidateInterests(this.candidateId)
+      .subscribe(data => this.candidateInterests = data,
+                error => this.candidateInterests = INTERESTS);
+
+    this.candidateService.getCandidateLanguages(this.candidateId)
+      .subscribe(data => this.candidateLanguages = data,
+                error => this.candidateLanguages = LANGUAGES);
   }
 }

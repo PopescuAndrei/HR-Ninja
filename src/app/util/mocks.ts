@@ -1,17 +1,18 @@
-import { Question } from './question';
-import { ChatMessage } from './chat-message';
-import { Position } from './position';
-import { Experience } from './experience';
-import { Language } from './language';
-import { Education } from './education';
-import { Skill } from './skill';
-import { Candidate } from './candidate';
-import { Comment } from './comment';
 
-export const GENERIC_CANDIDATE: Candidate = new Candidate(1, 'Popescu', 'Andrei','andrei.popescu93@gmail.com', 'male',  'Awesome description', 23, 45, 9, '#EDB63F');
+import { Skill } from '../domain/skill';
+import { Candidate } from '../domain/candidate';
+import { Language } from '../domain/language';
+import { Education } from '../domain/education';
+import { Experience } from '../domain/experience';
+import { ChatMessage } from '../domain/chat-message';
+import { Question } from '../domain/question';
+import { Position } from '../domain/position';
+import { Comment } from '../domain/comment';
+
+export const GENERIC_CANDIDATE: Candidate = new Candidate(1, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#EDB63F');
 export const CHAT_BOT: Candidate = new Candidate(0, 'HR', 'Ninja', 'hr@ninja.com', 'male');
 
-export const CANDIDATES: Array<Candidate[]> = [
+export const CANDIDATES: Array<Array<Candidate>> = [
     [
         new Candidate(1, 'Popescu', 'Andrei','andrei.popescu93@gmail.com', 'male',  'Awesome description', 23, 45, 9, '#EDB63F'),
         new Candidate(2, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#DD8335'),
@@ -35,7 +36,7 @@ export const SKILLS: Array<Skill> = [
     new Skill("Hibernate", 70)
 ];
 
-export const LANGUAGES: Array<Language> = [
+export const LANGUAGES: Language[] = [
     new Language("English", 100, 100, 90),
     new Language("German", 70, 20, 20)
 ];
@@ -47,7 +48,7 @@ export const EDUCATION: Array<Education> = [
     new Education("Blocuri", "Scoala Vietii", new Date("12.12.2000"), new Date("12.12.2008"), 9.3)
 ];
 
-export const COMMENTS = [
+export const COMMENTS: Array<Comment> = [
     new Comment("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016-01-01T23:28:56.782Z")),
     new Comment("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016-01-02T23:28:56.782Z")),
     new Comment("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016-01-03T23:28:56.782Z")),
@@ -55,13 +56,13 @@ export const COMMENTS = [
     new Comment("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016-01-05T23:28:56.782Z"))
 ];
 
-export const EXPERIENCES = [
+export const EXPERIENCES: Array<Experience> = [
     new Experience("Software Engineer", "Ericsson","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "January 2016 - present"),
     new Experience("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2015 - October 2015"),
     new Experience("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2014 - October 2014"),
 ];
 
-export const POSITIONS: Array<Position[]> = [
+export const POSITIONS: Array<Array<Position>> = [
     [
     new Position(1, "Senior Java Developer", 
         "Work with the latest technologies, enhance and evolve together with the projects", 

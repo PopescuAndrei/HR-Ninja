@@ -1,3 +1,6 @@
+import { COMMENT_NOT_SAVED, COMMENT_SAVED } from './../../util/messages';
+import { COMMENTS } from './../../util/mocks';
+import { NotificationService } from '../../services/notification.service';
 import { CandidatesService } from './../../services/candidates.service';
 import { User } from './../../domain/user';
 import { AppStoreService } from './../../app-store.service';
@@ -20,7 +23,8 @@ export class CommentViewComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private appStore: AppStoreService,
-    private candidateService: CandidatesService) { }
+    private candidateService: CandidatesService,
+    private notificationService: NotificationService) { }
 
   ngOnInit() {   
     //here we should have the api call
@@ -28,8 +32,11 @@ export class CommentViewComponent implements OnInit {
       (params: Params) => this.candidateId = params['id']
     )
 
+    this.candidateService.getCandidateComments(this.candidateId)
+      .subscribe(data => this.comments = data,
+                error => this.comments = COMMENTS);
+
     this.initCommentForm();
-    this.comments = this.candidateService.getCommentsForCandidate();
     this.appStore.getLoggedInUser().subscribe(user => this.user = user);
   }
 
@@ -41,18 +48,13 @@ export class CommentViewComponent implements OnInit {
 
   addComment() {
    if(this.commentForm.value.message) {
-    let newComment = new Comment(
-       this.user.firstName + " " + this.user.lastName, 
-       this.user.avatar, 
-       this.commentForm.value.message, 
-       new Date()
-    );
-    console.log(newComment);
+    let newComment = new Comment(this.user.firstName + " " + this.user.lastName, this.user.avatar, this.commentForm.value.message,new Date());
     
+    this.notificationService.showSuccess(COMMENT_SAVED);
     this.comments.push(newComment);
     this.initCommentForm();
    } else {
-     console.log("not working");
+     this.notificationService.showError(COMMENT_NOT_SAVED);
    }
   }
 }

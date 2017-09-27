@@ -1,4 +1,5 @@
-import { DomUtilsService } from './services/dom-utils.service';
+import { NotificationService } from './services/notification.service';
+import { ChatService } from './services/chat.service';
 import { QuestionCardComponent } from './interview/question-card/question-card.component';
 import { QuestionsService } from './services/questions.service';
 import { DragulaModule } from 'ng2-dragula/components/dragular.module';
@@ -54,7 +55,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     FooterModule,
     DragulaModule
   ],
-  providers: [CandidatesService, PositionsService, QuestionsService, AppStoreService],
+  providers: [CandidatesService, ChatService, PositionsService, QuestionsService, AppStoreService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

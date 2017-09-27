@@ -1,3 +1,5 @@
+import { QUESTIONS } from './../util/mocks';
+import { NotificationService } from './../services/notification.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Position } from './../domain/position';
 import { DragulaService } from 'ng2-dragula/components/dragula.provider';
@@ -15,14 +17,19 @@ export class InterviewComponent implements OnInit {
   private questions: Array<Question>;
   private addQuestionForm: FormGroup;
 
-  constructor(private questionService: QuestionsService, private dragulaService: DragulaService) {
+  constructor(private questionService: QuestionsService, 
+              private dragulaService: DragulaService,
+              private notificationService: NotificationService) {
+
     this.dragulaService.setOptions('questions-bag', {
       revertOnSpill: true
     });
   }
 
   ngOnInit() {
-    this.questions = this.questionService.getQuestions();
+    this.questionService.getQuestions()
+      .subscribe(data => this.questions = data,
+                error => this.questions = QUESTIONS);
 
     this.dragulaService
       .drop
@@ -94,7 +101,8 @@ export class InterviewComponent implements OnInit {
     this.addClass(position, 'position-moved')
   }
 
-  private save() {
+  private saveAll() {
+    this.notificationService.showSuccess("Save succesful");
     //this.questions.dbSaveAdicaAjaxCall();
   }
 }
