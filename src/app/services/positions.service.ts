@@ -2,19 +2,19 @@ import { Skill } from '../domain/skill';
 import { Candidate } from '../domain/candidate';
 import { Observable } from 'rxjs/Rx';
 import { RouterUtils } from './../util/router.utils';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Position } from '../domain/position';
 
 @Injectable()
 export class PositionsService {
 
-    constructor(private http: Http) { }
+    private headers: Headers; 
+    private options: RequestOptions;
 
-    getPositions(): Observable<Array<Array<Position>>> {
-        return this.http
-            .get(RouterUtils.positionsUrl())
-            .map((res: Response) => <Array<Array<Position>>> res.json());
+    constructor(private http: Http) {
+        this.headers = new Headers({ 'Content-Type': 'application/json' });
+        this.options = new RequestOptions({ headers: this.headers });
     }
 
     getPosition(positionId: number): Observable<Position> {
@@ -23,9 +23,27 @@ export class PositionsService {
             .map((res: Response) => <Position> res.json());
     }
 
+    createPosition(position: Position): Observable<Position> {
+        return this.http
+            .post(RouterUtils.createPositionUrl(), JSON.stringify(position), this.options)
+            .map((res: Response) => <Position> res.json());
+    }
+
+    deletePosition(positionId: number): Observable<Position> {
+        return this.http
+            .delete(RouterUtils.deletePositionUrl(positionId))
+            .map((res: Response) => <Position> res.json());
+    }
+
+    getPositions(): Observable<Array<Array<Position>>> {
+        return this.http
+            .get(RouterUtils.positionsUrl())
+            .map((res: Response) => <Array<Array<Position>>> res.json());
+    }
+
     getPositionCandidates(positionId: number) : Observable<Array<Candidate>> {
         return this.http
-            .get(RouterUtils.positionCandidatesUrl())
+            .get(RouterUtils.positionCandidatesUrl(positionId))
             .map((res: Response) => <Array<Candidate>> res.json());
     }
 

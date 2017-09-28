@@ -1,0 +1,15 @@
+/*Override panel*/
+.card {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);
+}
+  
+
+.numbers-first-part {
+	font-size:15px;
+	font-weight: bold;
+}
+
+.numbers-second-part {
+	font-size: 22px;
+	font-weight: bolder;
+}

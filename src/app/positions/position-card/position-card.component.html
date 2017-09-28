@@ -4,9 +4,14 @@
       <img [src]="position.image" alt="{{position.name}}" class="image">
     </div>
     <div class="card-content">
+      <a [routerLink]="['/positions/edit-position', position.id]" >
+        <button class="card-content-button red button-first">
+          <i class="material-icons">Edit</i>
+        </button>
+      </a>
       <a [routerLink]="['/positions', position.id]" >
-        <button class="card-content-button red">
-          <i class="material-icons">More...</i>
+        <button class="card-content-button red blue">
+          <i class="material-icons">View</i>
         </button>
       </a>
       <p class="card-content-name red-text">{{position.name}}</p>

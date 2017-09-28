@@ -1,6 +1,9 @@
+import { SkillService } from './services/skill.service';
+import { EditPositionComponent } from './positions/edit-position/edit-position.component';
+import { EditQuestionComponent } from './interview/edit-question/edit-question.component';
+import { CreatePositionComponent } from './positions/create-position/create-position.component';
 import { NotificationService } from './services/notification.service';
 import { ChatService } from './services/chat.service';
-import { QuestionCardComponent } from './interview/question-card/question-card.component';
 import { QuestionsService } from './services/questions.service';
 import { DragulaModule } from 'ng2-dragula/components/dragular.module';
 import { ChatViewComponent } from './candidates/chat-view/chat-view.component';
@@ -40,8 +43,8 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     AppComponent, DashboardComponent,
     CandidatesComponent, CandidateCardComponent, LanguageTableComponent, CommentViewComponent, ChatViewComponent,
     ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
-    PositionsComponent, PositionCardComponent, PositionViewComponent, CandidateListItemComponent,
-    InterviewComponent, QuestionCardComponent,
+    PositionsComponent, PositionCardComponent, PositionViewComponent, CandidateListItemComponent, CreatePositionComponent, EditPositionComponent,
+    InterviewComponent, EditQuestionComponent,
     SettingsComponent
   ],
   imports: [
@@ -55,7 +58,8 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     FooterModule,
     DragulaModule
   ],
-  providers: [CandidatesService, ChatService, PositionsService, QuestionsService, AppStoreService, NotificationService],
+  providers: [CandidatesService, ChatService, PositionsService, QuestionsService, SkillService,  
+              AppStoreService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

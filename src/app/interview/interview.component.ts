@@ -41,7 +41,7 @@ export class InterviewComponent implements OnInit {
     this.dragulaService
       .dropModel
       .subscribe((value:any) => {
-        this.reorderOnDrop(value.slice(1));
+        this.updateOrder();
       }
     );
     this.initAddQuestionForm();
@@ -68,7 +68,17 @@ export class InterviewComponent implements OnInit {
     }
   }
 
-  private reorderOnDrop(value: any) {
+  removeQuestion(question: Question) {
+    console.log("remove clicked");
+    const index: number = this.questions.indexOf(question);
+    if (index !== 1) {
+      this.questions.splice(index, 1);
+    }
+
+    this.updateOrder();
+  }
+
+  private updateOrder() {
     let i = 1;
     for (let question of this.questions) {
       question.position = i;
@@ -94,7 +104,7 @@ export class InterviewComponent implements OnInit {
 
   private onDrop(args:any):void {
     let [e] = args;
-    var notice = e.children[0].children[0];
+    var notice = e.children[0];
     var position = notice.children[0];
 
     this.addClass(notice, 'notice-moved');

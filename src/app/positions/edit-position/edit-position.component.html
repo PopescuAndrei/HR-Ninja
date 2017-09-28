@@ -1,0 +1,24 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="position.image" alt="{{position.name}}" class="image darken">
+        <p class="overlay">{{position.title}}</p>
+      </div>
+      <div class="card-content">
+        <p class="card-content-job">{{position.description}}</p>
+        <h4 class="red-text">Requirements</h4>
+        <ul class="requirements-list list-no-bullets">
+          <li *ngFor="let requirement of position.requirements">
+            <i class="ti-check-box"></i>
+              <span>
+                <span class="blue-text">{{requirement.level}}</span>
+                @ 
+                <span>{{requirement.name}}</span>
+              </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  

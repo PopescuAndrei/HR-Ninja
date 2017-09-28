@@ -1,3 +1,6 @@
+import { EditPositionComponent } from './positions/edit-position/edit-position.component';
+import { EditQuestionComponent } from './interview/edit-question/edit-question.component';
+import { CreatePositionComponent } from './positions/create-position/create-position.component';
 import { ChatViewComponent } from './candidates/chat-view/chat-view.component';
 import { PositionViewComponent } from './positions/position-view/position-view.component';
 import { CommentViewComponent } from './candidates/comment-view/comment-view.component';
@@ -33,11 +36,20 @@ export const AppRoutes: Routes = [
         path: 'positions',
         component: PositionsComponent
     }, {
+        path: 'positions/new',
+        component: CreatePositionComponent
+    }, {
+        path: 'positions/edit-position/:id',
+        component: EditPositionComponent
+    }, {
         path: 'positions/:id',
         component: PositionViewComponent
     }, {
         path: 'interview',
         component: InterviewComponent
+    }, {
+        path: 'interview/edit-question/:id',
+        component: EditQuestionComponent
     }, {
         path: 'settings',
         component: SettingsComponent

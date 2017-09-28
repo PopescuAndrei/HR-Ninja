@@ -80,3 +80,7 @@
   max-height: 200px;
   object-fit: cover;  
 }
+
+.button-first {
+  margin-right: 80px;
+}
