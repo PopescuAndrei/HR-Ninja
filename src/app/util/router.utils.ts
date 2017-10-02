@@ -1,6 +1,7 @@
+import { environment } from './../../environments/environment';
 export class RouterUtils {
 
-	static baseUrl: string =  "http://localhost:8080/RecruitingBot/api";
+	static baseUrl: string =  environment.herokuUrl? "https://recruitingmessbot.herokuapp.com/api" : "http://localhost:8080/RecruitingBot/api";
 
 	/** URLs finishing in / need additional id parameter
 	
