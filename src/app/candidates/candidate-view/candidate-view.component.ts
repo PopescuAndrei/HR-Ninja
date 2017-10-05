@@ -23,7 +23,7 @@ export class CandidateViewComponent implements OnInit {
   // TODO: Replace any with Interest
   private candidateInterests: Array<any>;
   private candidateExperience: Array<Experience>;
-  private candidateLanguages: Language[];
+  private candidateLanguages: Array<Language>;
   
   constructor(private route: ActivatedRoute, private candidateService: CandidatesService) { }
 

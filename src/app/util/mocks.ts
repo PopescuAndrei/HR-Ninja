@@ -36,30 +36,30 @@ export const SKILLS: Array<Skill> = [
     new Skill("Hibernate", 70)
 ];
 
-export const LANGUAGES: Language[] = [
+export const LANGUAGES: Array<Language> = [
     new Language("English", 100, 100, 90),
     new Language("German", 70, 20, 20)
 ];
 
 export const EDUCATION: Array<Education> = [
-    new Education("UPB - FILS", "MBAE", new Date("12.12.2016"), new Date("12.12.2018"), 9.5),
-    new Education("UPB - FILS", "Computer Science", new Date("12.12.2012"), new Date("12.12.2016"), 9.5),
-    new Education("CNDG - FILS", "Mate-Info", new Date("12.12.2008"), new Date("12.12.2012"), 9.3),
-    new Education("Blocuri", "Scoala Vietii", new Date("12.12.2000"), new Date("12.12.2008"), 9.3)
+    new Education("UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
+    new Education("UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
+    new Education("CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
+    new Education("Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
 ];
 
 export const COMMENTS: Array<Comment> = [
-    new Comment("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016-01-01T23:28:56.782Z")),
-    new Comment("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016-01-02T23:28:56.782Z")),
-    new Comment("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016-01-03T23:28:56.782Z")),
-    new Comment("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016-01-04T23:28:56.782Z")),
-    new Comment("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016-01-05T23:28:56.782Z"))
+    new Comment("Mom", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Best candidate", new Date("2016/01/01 23:28:56")),
+    new Comment("Dad", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Seems to be the best fit", new Date("2016/01/02 23:28:56")),
+    new Comment("Girl", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Everyone should have an employee like him", new Date("2016/01/03 23:28:56")),
+    new Comment("CEO", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "I'm telling you, i'm gonna step down and this guy will take my place!", new Date("2016/01/04 23:28:56")),
+    new Comment("Fan", "http://gravatar.com/avatar/412c0b0ec99008245d902e6ed0b264ee?s=80", "Definitely a keeper!", new Date("2016/01/05 23:28:56"))
 ];
 
 export const EXPERIENCES: Array<Experience> = [
-    new Experience("Software Engineer", "Ericsson","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "January 2016 - present"),
-    new Experience("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2015 - October 2015"),
-    new Experience("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", "June 2014 - October 2014"),
+    new Experience("Software Engineer", "Ericsson","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new Experience("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new Experience("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 
 export const POSITIONS: Array<Array<Position>> = [
@@ -67,36 +67,36 @@ export const POSITIONS: Array<Array<Position>> = [
     new Position(1, "Senior Java Developer", 
         "Work with the latest technologies, enhance and evolve together with the projects", 
         [new Skill("Java", 78), new Skill("Angular", 50)], 
-        new Date("2016-01-01T23:28:56.782Z")),
+        new Date("2016/01/01 23:28:56")),
     new Position(2, "Senior Architect", 
         "Work with Cloud Architectures, build and enhance existing ones.", 
         [new Skill("Java", 90), new Skill("Angular", 70)], 
-        new Date("2016-01-01T23:28:56.782Z"))
+        new Date("2016/01/01 23:28:56"))
     ], [
         new Position(3, "Senior Java Developer", 
             "Work with the latest technologies, enhance and evolve together with the projects", 
             [new Skill("Java", 78), new Skill("Angular", 50)], 
-            new Date("2016-01-01T23:28:56.782Z")),
+            new Date("2016/01/01 23:28:56")),
         new Position(4, "Senior Architect", 
             "Work with Cloud Architectures, build and enhance existing ones.", 
             [new Skill("Java", 90), new Skill("Angular", 70)], 
-            new Date("2016-01-01T23:28:56.782Z"))
+            new Date("2016/01/01 23:28:56"))
     ]];
 
 export const CONVERSATION: Array<ChatMessage> = [
-    new ChatMessage(1, GENERIC_CANDIDATE, "Hello", new Date("2016-01-01T22:00:08.782Z")),
-    new ChatMessage(2, CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016-01-01T22:00:33.782Z")),
-    new ChatMessage(3, GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016-01-01T22:01:02.782Z")),
-    new ChatMessage(4, CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016-01-01T22:01:08.782Z")),
-    new ChatMessage(5, GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016-01-01T22:02:14.782Z")),
-    new ChatMessage(6, CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016-01-01T22:02:15.782Z")),
-    new ChatMessage(7, GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016-01-01T22:03:01.782Z")),
-    new ChatMessage(8, CHAT_BOT, "What's your education?", new Date("2016-01-01T22:04:04.782Z")),
-    new ChatMessage(9, GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016-01-01T22:05:08.782Z")),
-    new ChatMessage(10, CHAT_BOT, "That's great. Anything else?", new Date("2016-01-01T22:06:08.782Z")),
-    new ChatMessage(11, GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016-01-01T22:07:08.782Z")),
-    new ChatMessage(12, CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016-01-01T22:08:08.782Z")),
-    new ChatMessage(13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016-01-01T22:09:08.782Z"))
+    new ChatMessage(1, GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
+    new ChatMessage(2, CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),
+    new ChatMessage(3, GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016/01/01 22:01:02")),
+    new ChatMessage(4, CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016/01/01 22:01:08")),
+    new ChatMessage(5, GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016/01/01 22:02:14")),
+    new ChatMessage(6, CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016/01/01 22:02:15")),
+    new ChatMessage(7, GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016/01/01 22:03:01")),
+    new ChatMessage(8, CHAT_BOT, "What's your education?", new Date("2016/01/01 22:04:04")),
+    new ChatMessage(9, GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016/01/01 22:05:08")),
+    new ChatMessage(10, CHAT_BOT, "That's great. Anything else?", new Date("2016/01/01 22:06:08")),
+    new ChatMessage(11, GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016/01/01 22:07:08")),
+    new ChatMessage(12, CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016/01/01 22:08:08")),
+    new ChatMessage(13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
 ];
 
 export const INTERESTS: Array<any> = [

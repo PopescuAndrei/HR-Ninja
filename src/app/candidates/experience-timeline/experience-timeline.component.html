@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let experience of candidateExperience">
       <div class="bullet"></div>
-      <div class="time cyan-text" style="font-size:1em;">{{experience.period}}</div>
+      <div class="time cyan-text" style="font-size:1em;">{{experience.periodFrom | date: 'MMM, yyyy'}} - {{experience.periodTo | date: 'MMM, yyyy'}}</div>
       <div class="desc">
         <h3 class="blue-text" style="font-size:1.2em; font-weight: bolder; margin-bottom:2px;">{{experience.title}}</h3>
         <h4 class="red-text" style="font-size:1.0em; font-weight: bold; margin-bottom:8px;" >@ {{experience.company}}</h4>

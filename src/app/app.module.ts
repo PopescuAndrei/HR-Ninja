@@ -15,7 +15,6 @@ import { CandidateListItemComponent } from './positions/candidate-list-item/cand
 import { ExperienceTimelineComponent } from './candidates/experience-timeline/experience-timeline.component';
 import { AppStoreService } from './app-store.service';
 import { CommentViewComponent } from './candidates/comment-view/comment-view.component';
-import { LanguageTableComponent } from './candidates/language-table/language-table.component';
 import { EducationTimelineComponent } from './candidates/education-timeline/education-timeline.component';
 import { CandidateCardComponent } from './candidates/candidate-card/candidate-card.component';
 import { InterviewComponent } from './interview/interview.component';
@@ -41,8 +40,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
 @NgModule({
   declarations: [
     AppComponent, DashboardComponent,
-    CandidatesComponent, CandidateCardComponent, LanguageTableComponent, CommentViewComponent, ChatViewComponent,
-    ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
+    CandidatesComponent, CandidateCardComponent, CommentViewComponent, ChatViewComponent, ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
     PositionsComponent, PositionCardComponent, PositionViewComponent, CandidateListItemComponent, CreatePositionComponent, EditPositionComponent,
     InterviewComponent, EditQuestionComponent,
     SettingsComponent

@@ -12,7 +12,7 @@
   background-color: #d9d9d9;
   position: absolute;
   top: 0;
-  left: 14.55em;
+  left: 2.5em;
   z-index: -ț1;
 }
 
@@ -34,15 +34,13 @@
 }
 
 .timeline .time {
-  float:left;
-  width: 40%;
+  width: 20%;
   font-size: 0.75em;
   padding-top: 0.25em;
 }
 
 .timeline .desc {
-  padding-left:20px;
-  width: 50%;
+  width: 70%;
 }
 
 .timeline h3 {
@@ -55,4 +53,27 @@
   margin: 0;
   font-size: 0.7em;
   font-weight: 400;
+}
+
+.timeline .people img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.credits,
+.video {
+  position: absolute;
+  bottom: 10px;
+  color: #808080;
+  font-size: 100%;
+  text-decoration: underline;
+}
+
+.credits {
+  left: 10px;
+}
+
+.video {
+  right: 10px;
 }

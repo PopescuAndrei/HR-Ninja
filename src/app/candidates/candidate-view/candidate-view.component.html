@@ -101,7 +101,32 @@
 
     <div class="row">
         <div class="col-lg-8 col-md-8">
-            <language-table [candidateLanguages]="candidateLanguages"></language-table>
+            <div class="card card-user white-backgound">
+                <div class="header">
+                    <h4 class="title text-center"><strong>Languages</strong></h4>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Writing</th>
+                                <th>Understanding</th>
+                                <th>Speaking</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let language of candidateLanguages">
+                                <td>{{language.name}}</td>
+                                <td>{{language.writing}}</td>
+                                <td>{{language.understanding}}</td>
+                                <td>{{language.speaking}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
         </div>
     </div>
 

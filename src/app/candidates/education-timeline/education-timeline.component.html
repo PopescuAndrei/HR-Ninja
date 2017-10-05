@@ -2,10 +2,10 @@
   <ul>
     <li *ngFor="let item of candidateEducation">
       <div class="bullet"></div>
-      <div class="time cyan-text" style="font-size:1em;">{{item.fromDate | date:short}} - {{item.toDate | date: short}}</div>
+      <div class="time cyan-text" style="font-size:1em;">{{item.fromDate | date: 'MMM, yyyy'}} - {{item.toDate | date: 'MMM, yyyy'}}</div>
       <div class="desc">
-        <h3 style="font-size:1.2em; font-weight: bolder;" class="blue-text">{{item.major}}</h3>
-        <h4 style="font-size:1.0em; font-weight: bold; margin-bottom:10px; margin-top:10px;" class="red-text">@ {{item.institution}}</h4>
+        <h3 class="blue-text" style="font-size:1.2em; font-weight: bolder; margin-bottom:2px;">{{item.major}}</h3>
+        <h4 class="red-text" style="font-size:1.0em; font-weight: bold; margin-bottom:8px;" >@ {{item.institution}}</h4>
         <p style="font-size:1.1em;">
           <strong class="blue-text">Grade: </strong><span class="red-text">{{item.grade}}</span>
         </p>

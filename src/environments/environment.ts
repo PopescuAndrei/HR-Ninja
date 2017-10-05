@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  herokuUrl: true
+  herokuUrl: false
 };
