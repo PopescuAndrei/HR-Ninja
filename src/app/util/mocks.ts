@@ -1,3 +1,4 @@
+import { Email } from '../domain/support.email';
 
 import { Skill } from '../domain/skill';
 import { Candidate } from '../domain/candidate';
@@ -9,20 +10,20 @@ import { Question } from '../domain/question';
 import { Position } from '../domain/position';
 import { Comment } from '../domain/comment';
 
-export const GENERIC_CANDIDATE: Candidate = new Candidate(1, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#EDB63F');
-export const CHAT_BOT: Candidate = new Candidate(0, 'HR', 'Ninja', 'hr@ninja.com', 'male');
+export const GENERIC_CANDIDATE: Candidate = new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male');
+export const CHAT_BOT: Candidate = new Candidate(0, 'HR', 'Ninja', new Email('hr@ninja.com'), 'male');
 
 export const CANDIDATES: Array<Array<Candidate>> = [
     [
-        new Candidate(1, 'Popescu', 'Andrei','andrei.popescu93@gmail.com', 'male',  'Awesome description', 23, 45, 9, '#EDB63F'),
-        new Candidate(2, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#DD8335'),
-        new Candidate(3, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'female', 'Awesome description', 23, 45, 9, '#D03A43'),
-        new Candidate(4, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#A6315D')
+        new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male',),
+        new Candidate(2, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male',),
+        new Candidate(3, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female'),
+        new Candidate(4, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male')
     ], [ 
-        new Candidate(5, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'female', 'Awesome description', 23, 45, 9, '#734488'),
-        new Candidate(6, 'Popescu', 'Andrei','andrei.popescu93@gmail.com', 'female', 'Awesome description', 23, 45, 9, '#3868A6'),
-        new Candidate(7, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#449C76'),
-        new Candidate(8, 'Popescu', 'Andrei', 'andrei.popescu93@gmail.com', 'male', 'Awesome description', 23, 45, 9, '#88B25C')
+        new Candidate(5, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female'),
+        new Candidate(6, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female'),
+        new Candidate(7, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male'),
+        new Candidate(8, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male')
     ]
 ];
 

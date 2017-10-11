@@ -7,14 +7,16 @@ export class Position {
 	description: string;
 	requirements: Array<Skill>
 	creationDate : Date;
+	lastUpdate: Date;
 	image: string;
 
-    constructor(id:number, name: string, description: string, requirements: Array<Skill>, creationDate: Date) {
+    constructor(id:number, name: string, description: string, requirements: Array<Skill>, creationDate: Date, lastUpdate?: Date) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.requirements = requirements;
 		this.creationDate = creationDate;
+		this.lastUpdate = lastUpdate;
 
 		this.setRandomImage();
 	}
