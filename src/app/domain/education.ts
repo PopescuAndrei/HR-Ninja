@@ -1,15 +1,22 @@
+import { Candidate } from './candidate';
 export class Education {
+
+    id: number;
+    candidate: Candidate;
     institution: string;
     major?: string;
-    fromDate?: Date;
-    toDate?: Date;
+    periodFrom?: Date;
+    periodTo?: Date;
     grade?: number;
 
-    constructor(institution: string, major?: string, fromDate?: Date, toDate?: Date, grade?: number) {
+    constructor(id: number, candidate: Candidate, institution: string, 
+        major?: string, periodFrom?: Date, periodTo?: Date, grade?: number) {
+        this.id = id;
+        this.candidate = candidate;
         this.institution = institution;
         this.major = major;
-        this.fromDate = fromDate;
-        this.toDate = toDate;
+        this.periodFrom = periodFrom;
+        this.periodTo = periodTo;
         this.grade = grade;
     }
 }

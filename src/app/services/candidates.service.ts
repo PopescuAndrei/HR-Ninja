@@ -1,3 +1,4 @@
+import { Interest } from './../domain/interest';
 import { Observable } from 'rxjs/Rx';
 import { RouterUtils } from '../util/router.utils';
 import { CANDIDATES, COMMENTS, EDUCATION, INTERESTS, LANGUAGES, SKILLS, EXPERIENCES, CONVERSATION } from '../util/mocks';
@@ -41,7 +42,7 @@ export class CandidatesService {
             .map((res: Response) => <Array<Education>> res.json());
     }
 
-    getCandidateInterests(candidateId: number): Observable<Array<any>> {
+    getCandidateInterests(candidateId: number): Observable<Array<Interest>> {
         return this.http
             .get(RouterUtils.candidateInterestsUrl(candidateId))
             .map((res: Response) => <Array<any>> res.json());
@@ -63,5 +64,23 @@ export class CandidatesService {
         return this.http
             .get(RouterUtils.candidateCommentsUrl(candidateId))
             .map((res: Response) => <Array<Comment>> res.json());
+    }
+
+    getCandidateLikesNumber(candidateId: number): Observable<number> {
+        return this.http
+            .get(RouterUtils.candidateLikesUrl(candidateId))
+            .map((res: Response) => <number> res.json());
+    }
+
+    getCandidateCommentsNumber(candidateId: number): Observable<number> {
+        return this.http
+            .get(RouterUtils.candidateCommentsUrl(candidateId))
+            .map((res: Response) => <number> res.json());
+    }
+
+    getCandidateRating(candidateId: number): Observable<number> {
+        return this.http
+            .get(RouterUtils.candidateRatingUrl(candidateId))
+            .map((res: Response) => <number> res.json());
     }
 }

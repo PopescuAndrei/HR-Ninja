@@ -1,3 +1,4 @@
+import { Interest } from '../../domain/interest';
 import { EDUCATION, EXPERIENCES, GENERIC_CANDIDATE, INTERESTS, LANGUAGES, SKILLS } from './../../util/mocks';
 import { ChatMessage } from '../../domain/chat-message';
 import { CandidatesService } from './../../services/candidates.service';
@@ -20,10 +21,12 @@ export class CandidateViewComponent implements OnInit {
   private candidate: Candidate;
   private candidateSkills: Array<Skill>;
   private candidateEducation: Array<Education>;
-  // TODO: Replace any with Interest
-  private candidateInterests: Array<any>;
+  private candidateInterests: Array<Interest>;
   private candidateExperience: Array<Experience>;
   private candidateLanguages: Array<Language>;
+  private candidateLikesNumber: number;
+  private candidateCommentsNumber: number;
+  private candidateRating: number;
   
   constructor(private route: ActivatedRoute, private candidateService: CandidatesService) { }
 
@@ -55,5 +58,19 @@ export class CandidateViewComponent implements OnInit {
     this.candidateService.getCandidateLanguages(this.candidateId)
       .subscribe(data => this.candidateLanguages = data,
                 error => this.candidateLanguages = LANGUAGES);
+
+    this.candidateService.getCandidateLikesNumber(this.candidateId)
+      .subscribe(data => this.candidateLikesNumber = data,
+                error => this.candidateLikesNumber = 20);
+
+
+    this.candidateService.getCandidateRating(this.candidateId)
+      .subscribe(data => this.candidateRating = data,
+                error => this.candidateRating = 4.8);
+
+
+    this.candidateService.getCandidateCommentsNumber(this.candidateId)
+    .subscribe(data => this.candidateCommentsNumber = data,
+              error => this.candidateCommentsNumber = 45);
   }
 }

@@ -5,16 +5,14 @@ export class Position {
 	id: number;
 	name: string;
 	description: string;
-	requirements: Array<Skill>
 	creationDate : Date;
 	lastUpdate: Date;
 	image: string;
 
-    constructor(id:number, name: string, description: string, requirements: Array<Skill>, creationDate: Date, lastUpdate?: Date) {
+    constructor(id:number, name: string, description: string, creationDate: Date, lastUpdate?: Date) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.requirements = requirements;
 		this.creationDate = creationDate;
 		this.lastUpdate = lastUpdate;
 

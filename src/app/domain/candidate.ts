@@ -9,17 +9,17 @@ export class Candidate {
     gender: string;
     avatar?: string;
     color?: string;
-    score? : number;
+    score?: number;
 
-    constructor(id: number, firstName: string, lastName: string, email:Email, gender: string) {
+    constructor(id: number, firstName: string, lastName: string, email:Email, gender: string, score?: number) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-
+        this.score = score;
+        
         this.setAvatar();
-        this.score = Math.floor(Math.random() * 100) + 1;
     }
 
     private setAvatar() {

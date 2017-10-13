@@ -1,3 +1,4 @@
+import { Interest } from './../domain/interest';
 import { Email } from '../domain/support.email';
 
 import { Skill } from '../domain/skill';
@@ -15,15 +16,15 @@ export const CHAT_BOT: Candidate = new Candidate(0, 'HR', 'Ninja', new Email('hr
 
 export const CANDIDATES: Array<Array<Candidate>> = [
     [
-        new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male',),
-        new Candidate(2, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male',),
-        new Candidate(3, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female'),
-        new Candidate(4, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male')
+        new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 90),
+        new Candidate(2, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 90),
+        new Candidate(3, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', 95),
+        new Candidate(4, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 21)
     ], [ 
-        new Candidate(5, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female'),
-        new Candidate(6, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female'),
-        new Candidate(7, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male'),
-        new Candidate(8, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male')
+        new Candidate(5, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', 32),
+        new Candidate(6, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', 34),
+        new Candidate(7, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 35),
+        new Candidate(8, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 36)
     ]
 ];
 
@@ -43,10 +44,10 @@ export const LANGUAGES: Array<Language> = [
 ];
 
 export const EDUCATION: Array<Education> = [
-    new Education("UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
-    new Education("UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
-    new Education("CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
-    new Education("Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
+    new Education(1, GENERIC_CANDIDATE, "UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
+    new Education(2, GENERIC_CANDIDATE, "UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
+    new Education(3, GENERIC_CANDIDATE, "CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
+    new Education(4, GENERIC_CANDIDATE, "Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
 ];
 
 export const COMMENTS: Array<Comment> = [
@@ -58,29 +59,25 @@ export const COMMENTS: Array<Comment> = [
 ];
 
 export const EXPERIENCES: Array<Experience> = [
-    new Experience("Software Engineer", "Ericsson","Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-    new Experience("Software Developer Intern", "Teamnet", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-    new Experience("Android Developer Intern", "XLTeam", "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new Experience(1, GENERIC_CANDIDATE, "Software Engineer", "Ericsson", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new Experience(2, GENERIC_CANDIDATE, "Software Developer Intern", "Teamnet", new Date("12/12/2012 12:00:00"), new Date("12/12/2016 12:00:00")),
+    new Experience(3, GENERIC_CANDIDATE, "Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 
 export const POSITIONS: Array<Array<Position>> = [
     [
     new Position(1, "Senior Java Developer", 
-        "Work with the latest technologies, enhance and evolve together with the projects", 
-        [new Skill("Java", 78), new Skill("Angular", 50)], 
+        "Work with the latest technologies, enhance and evolve together with the projects",  
         new Date("2016/01/01 23:28:56")),
     new Position(2, "Senior Architect", 
-        "Work with Cloud Architectures, build and enhance existing ones.", 
-        [new Skill("Java", 90), new Skill("Angular", 70)], 
+        "Work with Cloud Architectures, build and enhance existing ones.",  
         new Date("2016/01/01 23:28:56"))
     ], [
         new Position(3, "Senior Java Developer", 
-            "Work with the latest technologies, enhance and evolve together with the projects", 
-            [new Skill("Java", 78), new Skill("Angular", 50)], 
+            "Work with the latest technologies, enhance and evolve together with the projects",
             new Date("2016/01/01 23:28:56")),
         new Position(4, "Senior Architect", 
-            "Work with Cloud Architectures, build and enhance existing ones.", 
-            [new Skill("Java", 90), new Skill("Angular", 70)], 
+            "Work with Cloud Architectures, build and enhance existing ones.",
             new Date("2016/01/01 23:28:56"))
     ]];
 
@@ -100,18 +97,12 @@ export const CONVERSATION: Array<ChatMessage> = [
     new ChatMessage(13, GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
 ];
 
-export const INTERESTS: Array<any> = [
-    {
-        "name":"Basketball"
-    }, {
-        "name":"Programming"
-    }, {
-        "name":"Swimming"
-    }, {
-        "name":"Traveling"
-    }, {
-        "name":"Rubbing the mint"
-    }
+export const INTERESTS: Array<Interest> = [
+    new Interest(1, GENERIC_CANDIDATE, "Basketball"),
+    new Interest(1, GENERIC_CANDIDATE, "Programming"),
+    new Interest(1, GENERIC_CANDIDATE, "Swimming"),
+    new Interest(1, GENERIC_CANDIDATE, "Traveling"),
+    new Interest(1, GENERIC_CANDIDATE, "Rubbing the mint")
 ]
 
 export const QUESTIONS: Array<Question> = [

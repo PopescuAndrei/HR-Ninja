@@ -1,18 +1,22 @@
+import { Email } from './support.email';
 import { FEMALE_AVATARS, MALE_AVATARS } from '../util/constants';
 
 export class User {
     id: number;
     firstName: string;
     lastName: string;
-    email: string;
+    email: Email;
+    password: string;
     avatar?: string;
 
-    constructor(id: number, firstName: string, lastName: string, email:string) {
+    // TODO: avatar
+    constructor(id: number, firstName: string, lastName: string, email: Email, password: string) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-
+        this.password = password;
+        
         this.setAvatar();
     }
 

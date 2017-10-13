@@ -15,6 +15,7 @@ export class PositionViewComponent implements OnInit {
 
   private positionId: number;
   private position: Position;
+  private positionRequirements: Array<Skill>;
   private positionCandidates: Array<Candidate>;
 
   constructor(private route: ActivatedRoute, private positionsService: PositionsService) { }
@@ -28,9 +29,12 @@ export class PositionViewComponent implements OnInit {
     );
 
     this.position = new Position(this.positionId, "General Position", `Our job descriptions highlight the primary responsibilities, requirements, qualifications and challenges of a given job. In short, a job description will tell you what your employer will expect from you, as well as what you can expect from your employer.
-    Whether you’re looking for your first job or researching what you’ll need to do to land your dream job in the future, our job descriptions will help point you in the right direction.`, 
-    SKILLS, new Date("12.12.2017"));
+    Whether you’re looking for your first job or researching what you’ll need to do to land your dream job in the future, our job descriptions will help point you in the right direction.`, new Date("12.12.2017"));
 
     this.positionCandidates = CANDIDATES[0];
+    
+    this.positionsService.getPositionRequirements(this.positionId)
+    .subscribe(data => this.positionRequirements = data,
+              error => this.positionRequirements = SKILLS);
   }
 }

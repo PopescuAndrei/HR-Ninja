@@ -9,10 +9,14 @@
                         <h4 class="title">
                             <span class="cyan-text">{{candidate?.firstName}} {{candidate?.lastName}}</span>
                             <br />
-                            <a href="#"><small><span class="black-text">{{candidate?.email}}</span></small></a>
+                            <a href="#"><small><span class="black-text">{{candidate?.email.address}}</span></small></a>
                         </h4>
                     </div>
                     <p class="description text-center">{{candidate?.description}}</p>
+                    
+                    <div class="text-center">
+                        <a [routerLink]="['/candidates', candidateId, 'chat']"><button class="btn btn-round dark-primary-color">Chat Thread</button></a>
+                    </div>
                 </div>
                 <hr>
                 <div class="text-center">
@@ -20,22 +24,20 @@
                         <div class="col-md-3 col-md-offset-1">
                             <a [routerLink]="['/candidates', candidateId, 'comments']">
                                 <h5>
-                                    <span class="cyan-text">{{candidate?.comments}}</span>
+                                    <span class="cyan-text">{{candidateCommentsNumber}}</span>
                                     <br /><small>Comments</small>
                                 </h5>
                             </a>
                         </div>
                         <div class="col-md-4">
-                            <a [routerLink]="['/candidates', candidateId, 'chat']">
-                                <h5>
-                                <span class="candidate-rating">{{candidate?.likes}}</span><br />
-                                <small>Likes</small>
-                                </h5>
-                            </a>
+                            <h5>
+                            <span class="candidate-rating">{{candidateLikesNumber}}</span><br />
+                            <small>Likes</small>
+                            </h5>
                         </div>
                         <div class="col-md-3">
                             <h5>
-                            <span class="candidate-rating">{{candidate?.rating}}</span>
+                            <span class="candidate-rating">{{candidateRating}}</span>
                             <br /><small>/5</small>
                             </h5>
                         </div>
