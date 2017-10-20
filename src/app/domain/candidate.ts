@@ -7,17 +7,20 @@ export class Candidate {
     lastName: string;
     email: Email;
     gender: string;
+    phone: string;
     avatar?: string;
     color?: string;
-    score?: number;
-
-    constructor(id: number, firstName: string, lastName: string, email:Email, gender: string, score?: number) {
+    facebookUuid?: string;
+    
+    constructor(id: number, firstName: string, lastName: string, email:Email, gender: string, phone: string, avatar?: string, color?: string, facebookUuid?: string) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.gender = gender;
-        this.score = score;
+        this.phone = phone;
+        this.color = color;
+        this.facebookUuid = facebookUuid;
         
         this.setAvatar();
     }

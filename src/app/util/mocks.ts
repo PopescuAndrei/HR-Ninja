@@ -1,3 +1,4 @@
+import { FEMALE_AVATARS, MALE_AVATARS } from './constants';
 import { Interest } from './../domain/interest';
 import { Email } from '../domain/support.email';
 
@@ -11,20 +12,20 @@ import { Question } from '../domain/question';
 import { Position } from '../domain/position';
 import { Comment } from '../domain/comment';
 
-export const GENERIC_CANDIDATE: Candidate = new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male');
-export const CHAT_BOT: Candidate = new Candidate(0, 'HR', 'Ninja', new Email('hr@ninja.com'), 'male');
+export const GENERIC_CANDIDATE: Candidate = new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', '0745314873', MALE_AVATARS[2]);
+export const CHAT_BOT: Candidate = new Candidate(0, 'HR', 'Ninja', new Email('hr@ninja.com'), 'male', '0888888888', MALE_AVATARS[1]);
 
 export const CANDIDATES: Array<Array<Candidate>> = [
     [
-        new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 90),
-        new Candidate(2, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 90),
-        new Candidate(3, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', 95),
-        new Candidate(4, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 21)
+        new Candidate(1, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', '0745314873', MALE_AVATARS[0]),
+        new Candidate(2, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', '0745314873', MALE_AVATARS[1]),
+        new Candidate(3, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', '0745314873', FEMALE_AVATARS[0]),
+        new Candidate(4, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', '0745314873', MALE_AVATARS[2])
     ], [ 
-        new Candidate(5, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', 32),
-        new Candidate(6, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', 34),
-        new Candidate(7, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 35),
-        new Candidate(8, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', 36)
+        new Candidate(5, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', '0745314873', FEMALE_AVATARS[1]),
+        new Candidate(6, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'female', '0745314873', FEMALE_AVATARS[2]),
+        new Candidate(7, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', '0745314873', MALE_AVATARS[3]),
+        new Candidate(8, 'Popescu', 'Andrei', new Email('andrei.popescu93@gmail.com'), 'male', '0745314873', MALE_AVATARS[4])
     ]
 ];
 
@@ -44,10 +45,10 @@ export const LANGUAGES: Array<Language> = [
 ];
 
 export const EDUCATION: Array<Education> = [
-    new Education(1, GENERIC_CANDIDATE, "UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
-    new Education(2, GENERIC_CANDIDATE, "UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
-    new Education(3, GENERIC_CANDIDATE, "CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
-    new Education(4, GENERIC_CANDIDATE, "Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
+    new Education(1, "UPB - FILS", "MBAE", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00"), 9.5),
+    new Education(2, "UPB - FILS", "Computer Science", new Date("12/12/2012"), new Date("12/12/2016 12:00:00"), 9.5),
+    new Education(3, "CNDG - FILS", "Mate-Info", new Date("12/12/2008 12:00:00"), new Date("12/12/2012 12:00:00"), 9.3),
+    new Education(4, "Blocuri", "Scoala Vietii", new Date("12/12/2000 12:00:00"), new Date("12/12/2008 12:00:00"), 9.3)
 ];
 
 export const COMMENTS: Array<Comment> = [
@@ -59,9 +60,9 @@ export const COMMENTS: Array<Comment> = [
 ];
 
 export const EXPERIENCES: Array<Experience> = [
-    new Experience(1, GENERIC_CANDIDATE, "Software Engineer", "Ericsson", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
-    new Experience(2, GENERIC_CANDIDATE, "Software Developer Intern", "Teamnet", new Date("12/12/2012 12:00:00"), new Date("12/12/2016 12:00:00")),
-    new Experience(3, GENERIC_CANDIDATE, "Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new Experience(1, "Software Engineer", "Ericsson", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
+    new Experience(2, "Software Developer Intern", "Teamnet", new Date("12/12/2012 12:00:00"), new Date("12/12/2016 12:00:00")),
+    new Experience(3, "Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 
 export const POSITIONS: Array<Array<Position>> = [
@@ -98,11 +99,11 @@ export const CONVERSATION: Array<ChatMessage> = [
 ];
 
 export const INTERESTS: Array<Interest> = [
-    new Interest(1, GENERIC_CANDIDATE, "Basketball"),
-    new Interest(1, GENERIC_CANDIDATE, "Programming"),
-    new Interest(1, GENERIC_CANDIDATE, "Swimming"),
-    new Interest(1, GENERIC_CANDIDATE, "Traveling"),
-    new Interest(1, GENERIC_CANDIDATE, "Rubbing the mint")
+    new Interest(1, "Basketball"),
+    new Interest(1, "Programming"),
+    new Interest(1, "Swimming"),
+    new Interest(1, "Traveling"),
+    new Interest(1, "Rubbing the mint")
 ]
 
 export const QUESTIONS: Array<Question> = [

@@ -10,7 +10,7 @@ export class User {
     avatar?: string;
 
     // TODO: avatar
-    constructor(id: number, firstName: string, lastName: string, email: Email, password: string) {
+    constructor(id: number, firstName: string, lastName: string, email: Email, password: string, avatar?: string) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
