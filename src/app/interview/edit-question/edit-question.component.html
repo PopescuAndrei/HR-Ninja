@@ -1,3 +1,17 @@
-<p>
-  edit-question works!
-</p>
+<div class="container-fluid" >
+	<div class=form-inline form-edit-question role="form" [formGroup] = "editQuestionForm">
+		<div class="col-md-12">
+			<input type="text" style="width:100%;" class="form-control" formControlName="question" value="{{question.query}}">
+		</div>
+		<div class="replies">
+			<ol class="replies-list list-no-bullets">
+				<li *ngFor = "let reply of questionReplies" [attr.data-id]="reply.id">
+					<div class="notice">
+						{{reply.}}
+					</div>
+				</li>
+			</ol>
+		</div>
+	</div>
+
+</div>

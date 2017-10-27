@@ -1,3 +1,4 @@
+import { Reply } from './../domain/reply';
 import { FEMALE_AVATARS, MALE_AVATARS } from './constants';
 import { Interest } from './../domain/interest';
 import { Email } from '../domain/support.email';
@@ -107,12 +108,19 @@ export const INTERESTS: Array<Interest> = [
 ]
 
 export const QUESTIONS: Array<Question> = [
-    new Question(1, 1, "Intrebarea UNU?", new Array<string>()),
-    new Question(2, 2, "Intrebarea DOI?", new Array<string>()),
-    new Question(3, 3, "Intrebarea TREI?", new Array<string>()),
-    new Question(4, 4, "Intrebarea PATRU?", new Array<string>()),
-    new Question(5, 5, "Intrebarea CINCI?", new Array<string>()),
-    new Question(6, 6, "Intrebarea SASE?", new Array<string>()),
-    new Question(7, 7, "Intrebarea SAPTE?", new Array<string>()),
-    new Question(8, 8, "Intrebarea OPT?", new Array<string>()),
+    new Question(1, 1, "Intrebarea UNU?"),
+    new Question(2, 2, "Intrebarea DOI?"),
+    new Question(3, 3, "Intrebarea TREI?"),
+    new Question(4, 4, "Intrebarea PATRU?"),
+    new Question(5, 5, "Intrebarea CINCI?"),
+    new Question(6, 6, "Intrebarea SASE?"),
+    new Question(7, 7, "Intrebarea SAPTE?"),
+    new Question(8, 8, "Intrebarea OPT?")
 ];
+
+export const REPLIES: Array<Reply> = [
+    new Reply(1, QUESTIONS[0], "Reply 1-1"),
+    new Reply(2, QUESTIONS[0], "Reply 1-2"),
+    new Reply(3, QUESTIONS[1], "Reply 2-1"),
+    new Reply(4, QUESTIONS[2], 'Reply 3-1')
+]

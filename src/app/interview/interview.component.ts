@@ -59,7 +59,7 @@ export class InterviewComponent implements OnInit {
 
   addQuestion() {
     if(this.addQuestionForm.value.question) {
-      let newQuestion = new Question(null, this.questions.length + 1, this.addQuestionForm.value.question, new Array<string>());
+      let newQuestion = new Question(null, this.questions.length + 1, this.addQuestionForm.value.question);
       
       this.questions.push(newQuestion);
       this.initAddQuestionForm();

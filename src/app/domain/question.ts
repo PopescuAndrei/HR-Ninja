@@ -3,13 +3,11 @@ import { Candidate } from './candidate';
 export class Question {
 	id: number;
 	position: number;
-	question: string;
-	answers: Array<string>;
+	query: string;
 
-    constructor(id:number, position: number, question: string, answers: Array<string>) {
+    constructor(id:number, position: number, query: string) {
 		this.id = id;
 		this.position = position;
-		this.question = question;
-		this.answers = answers;
+		this.query = query;
 	}
 }

@@ -1,4 +1,5 @@
-import { QUESTIONS } from './../../util/mocks';
+import { Reply } from './../../domain/reply';
+import { QUESTIONS, REPLIES } from './../../util/mocks';
 import { ActivatedRoute, Params } from '@angular/router';
 import { QuestionsService } from './../../services/questions.service';
 import { Question } from './../../domain/question';
@@ -13,6 +14,7 @@ export class EditQuestionComponent implements OnInit {
 
   private questionId: number;
   private question: Question;
+  private questionReplies: Array<Reply>;
 
   constructor(private route: ActivatedRoute, private questionService : QuestionsService) { }
 
@@ -24,6 +26,10 @@ export class EditQuestionComponent implements OnInit {
     this.questionService.getQuestion(this.questionId)
       .subscribe(data => this.question = data,
                 error => this.question = QUESTIONS[this.questionId]);
+
+    this.questionService.getQuestionReplies(this.questionId)
+        .subscribe(data => this.questionReplies = data,
+                error => this.questionReplies = REPLIES)
   }
 
 }
