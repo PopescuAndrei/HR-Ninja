@@ -18,6 +18,22 @@
         </div>
       </form>      
   </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well well-hint">
+        <span class="hint">Did you know you can use the following keywords in your text:</span>
+        <ul class="list-no-bullets">
+          <li>
+            <span class="hint-keyword">:candidate</span> to refer the candidate by his/hers name;
+          </li>
+          <li>
+            <span class="hint-keyword">:candidate</span> to refer the candidate by his/hers name;
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <ol [dragula]="'questions-bag'" [dragulaModel]="questions" class="questions-list list-no-bullets">
     <li *ngFor="let question of questions" [attr.data-id]="question.id">

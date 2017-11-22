@@ -32,6 +32,19 @@
 	border-color: #3868A6;
 }
 
+.well-hint {
+	background-color:#dcdcdc;
+	margin-left:40px;
+}
+
+.hint {
+	color:#3868A6;
+}
+
+.hint-keyword {
+	color:#D03A43;
+}
+
 .position {
 	padding: 5px;
 	padding-left:10px;
