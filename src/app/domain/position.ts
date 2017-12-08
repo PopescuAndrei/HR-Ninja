@@ -3,23 +3,18 @@ import { Skill } from './skill';
 
 export class Position {
 	id: number;
-	name: string;
+	title: string;
 	description: string;
 	creationDate : Date;
 	lastUpdate: Date;
 	image: string;
 
-    constructor(id:number, name: string, description: string, creationDate: Date, lastUpdate?: Date) {
+    constructor(id:number, title: string, description: string, creationDate: Date, image: string, lastUpdate?: Date) {
 		this.id = id;
-		this.name = name;
+		this.title = title;
 		this.description = description;
 		this.creationDate = creationDate;
 		this.lastUpdate = lastUpdate;
-
-		this.setRandomImage();
-	}
-
-	private setRandomImage() {
-		this.image = POSITION_BACKGROUNDS[Math.floor(Math.random() * POSITION_BACKGROUNDS.length)];
+		this.image = image;
 	}
 }

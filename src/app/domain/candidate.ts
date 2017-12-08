@@ -21,15 +21,6 @@ export class Candidate {
         this.phone = phone;
         this.color = color;
         this.facebookUuid = facebookUuid;
-        
-        this.setAvatar();
-    }
-
-    private setAvatar() {
-        if(this.gender === 'male') {
-            this.avatar = MALE_AVATARS[Math.floor(Math.random() * MALE_AVATARS.length)];
-        } else {
-            this.avatar = FEMALE_AVATARS[Math.floor(Math.random() * FEMALE_AVATARS.length)];
-        }
+        this.avatar = avatar;
     }
 }

@@ -5,7 +5,6 @@ import { Position } from './../../domain/position';
 import { ActivatedRoute, Params } from '@angular/router';
 import { PositionsService } from '../../services/positions.service';
 import { Component, OnInit } from '@angular/core';
-import { POSITIONS } from '../../util/mocks';
 
 @Component({
   selector: 'edit-position',
@@ -28,8 +27,7 @@ export class EditPositionComponent implements OnInit {
     );
 
     this.positionsService.getPosition(this.positionId)
-      .subscribe(data => this.position = data,
-                error => this.position = POSITIONS[1][1]);
+      .subscribe(data => this.position = data);
     
     this.skillService.getSkills()
         .subscribe(data => this.skillList = data,

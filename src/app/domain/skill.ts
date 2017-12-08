@@ -6,8 +6,4 @@ export class Skill {
         this.name = name;
         this.level = level;
     }
-    
-    public getColor(): any {
-        return '#449C76';
-    }
 }

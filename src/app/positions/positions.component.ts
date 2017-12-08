@@ -1,4 +1,3 @@
-import { POSITIONS } from './../util/mocks';
 import { PositionsService } from './../services/positions.service';
 import { Position } from './../domain/position';
 import { Candidate } from './../domain/candidate';
@@ -16,8 +15,7 @@ export class PositionsComponent implements OnInit {
 
   ngOnInit() {
     this.positionsService.getPositions()
-      .subscribe(data => this.positions = data,
-                error => this.positions = POSITIONS);
+      .subscribe(data => this.positions = data);
   }
 
 }

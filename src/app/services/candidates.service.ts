@@ -74,7 +74,7 @@ export class CandidatesService {
 
     getCandidateCommentsNumber(candidateId: number): Observable<number> {
         return this.http
-            .get(RouterUtils.candidateCommentsUrl(candidateId))
+            .get(RouterUtils.candidateCommentsNumberUrl(candidateId))
             .map((res: Response) => <number> res.json());
     }
 

@@ -66,23 +66,6 @@ export const EXPERIENCES: Array<Experience> = [
     new Experience("Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 
-export const POSITIONS: Array<Array<Position>> = [
-    [
-    new Position(1, "Senior Java Developer", 
-        "Work with the latest technologies, enhance and evolve together with the projects",  
-        new Date("2016/01/01 23:28:56")),
-    new Position(2, "Senior Architect", 
-        "Work with Cloud Architectures, build and enhance existing ones.",  
-        new Date("2016/01/01 23:28:56"))
-    ], [
-        new Position(3, "Senior Java Developer", 
-            "Work with the latest technologies, enhance and evolve together with the projects",
-            new Date("2016/01/01 23:28:56")),
-        new Position(4, "Senior Architect", 
-            "Work with Cloud Architectures, build and enhance existing ones.",
-            new Date("2016/01/01 23:28:56"))
-    ]];
-
 export const CONVERSATION: Array<ChatMessage> = [
     new ChatMessage(GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
     new ChatMessage(CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),

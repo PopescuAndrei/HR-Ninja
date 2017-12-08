@@ -37,6 +37,7 @@ export class RouterUtils {
 	static education: string = "/education";
 	static languages: string = "/languages";
 	static comments: string = "/comments";
+	static commentsNumber: string = "/noComments";
 	static likes: string = "/likes";
 	static rating: string = "/rating";
 	static chat: string = "/chat";
@@ -111,6 +112,14 @@ export class RouterUtils {
 	 */
 	static candidateCommentsUrl(candidateId: number): string {
 		return this.baseUrl + this.candidate + candidateId + this.comments;
+	}
+
+	/**
+	 * Url for retrieving the comments associated with the candidate with the provided id
+	 * @param candidateId 
+	 */
+	static candidateCommentsNumberUrl(candidateId: number): string {
+		return this.baseUrl + this.candidate + candidateId + this.commentsNumber;
 	}
 
 	/**
