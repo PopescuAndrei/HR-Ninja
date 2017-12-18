@@ -1,4 +1,4 @@
-import { CONVERSATION, GENERIC_CANDIDATE } from './../../util/mocks';
+import { GENERIC_CANDIDATE } from './../../util/mocks';
 import { ChatService } from './../../services/chat.service';
 import { CandidatesService } from './../../services/candidates.service';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -28,11 +28,9 @@ export class ChatViewComponent implements OnInit {
     );
     
     this.candidateService.getCandidate(this.candidateId)
-      .subscribe(data => this.candidate = data,
-                error => this.candidate = GENERIC_CANDIDATE);
+      .subscribe(data => this.candidate = data);
 
     this.chatService.getConversation(this.candidateId)
-      .subscribe(data => this.candidateConversation = data,
-                error => this.candidateConversation = CONVERSATION);
+      .subscribe(data => this.candidateConversation = data);
   }
 }

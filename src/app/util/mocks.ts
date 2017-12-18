@@ -66,22 +66,6 @@ export const EXPERIENCES: Array<Experience> = [
     new Experience("Android Developer Intern", "XLTeam", new Date("12/12/2016 12:00:00"), new Date("12/12/2018 12:00:00")),
 ];
 
-export const CONVERSATION: Array<ChatMessage> = [
-    new ChatMessage(GENERIC_CANDIDATE, "Hello", new Date("2016/01/01 22:00:08")),
-    new ChatMessage(CHAT_BOT, "Hello. Nice to meet you. How can I help you?", new Date("2016/01/01 22:00:33")),
-    new ChatMessage(GENERIC_CANDIDATE, "I would like to know about the open Java Position", new Date("2016/01/01 22:01:02")),
-    new ChatMessage(CHAT_BOT, "Here is a list of the available position. Read them and tell me which one are you interested in.", new Date("2016/01/01 22:01:08")),
-    new ChatMessage(GENERIC_CANDIDATE, "I'm interested in the Senior Java Architect One", new Date("2016/01/01 22:02:14")),
-    new ChatMessage(CHAT_BOT, "Ok. So...how should we proceed? Do you want to tell me about your experience or should I ask you specific questions?", new Date("2016/01/01 22:02:15")),
-    new ChatMessage(GENERIC_CANDIDATE, "I'll answer your questions.", new Date("2016/01/01 22:03:01")),
-    new ChatMessage(CHAT_BOT, "What's your education?", new Date("2016/01/01 22:04:04")),
-    new ChatMessage(GENERIC_CANDIDATE, "I've studied in UCLA for 3 years as a Computer Science student. I've graduated with 10 actually.", new Date("2016/01/01 22:05:08")),
-    new ChatMessage(CHAT_BOT, "That's great. Anything else?", new Date("2016/01/01 22:06:08")),
-    new ChatMessage(GENERIC_CANDIDATE, "I've also worked for Teamnet as a java developer for 2 years.", new Date("2016/01/01 22:07:08")),
-    new ChatMessage(CHAT_BOT, "Sounds like you fit. I'll notice my colleagues and they will get back to you! Have a nice day!", new Date("2016/01/01 22:08:08")),
-    new ChatMessage(GENERIC_CANDIDATE, "Ok. You to! And thank you for your time!", new Date("2016/01/01 22:09:08"))
-];
-
 export const INTERESTS: Array<Interest> = [
     new Interest("Basketball"),
     new Interest("Programming"),

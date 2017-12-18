@@ -1,8 +1,8 @@
 <div class="chat-history">
   <ul>
     <li *ngFor="let message of candidateConversation" class="chat-item list-no-bullets"
-      [ngClass]="{'chat-item--me': message.from.id > 0, 'chat-item--other':message.from.id === 0}">
-      <img *ngIf="message.from.id > 0" [src]="message.from.avatar" alt="{{message.from.firstName}} {{message.from.lastName}}" />
+      [ngClass]="{'chat-item--me': message.fromRobot === false, 'chat-item--other':message.fromRobot === true}">
+      <img *ngIf="message.fromRobot === false" [src]="message.from.avatar" alt="{{message.from.firstName}} {{message.from.lastName}}" />
       <div class="message">
         <span class="message__user-name">{{message.from.firstName}} {{message.from.lastName}}</span>
         <time class="message__time">
@@ -11,7 +11,7 @@
         </time>
         <p class="message__text">{{message.message}}</p>
       </div>
-      <img *ngIf="message.from.id === 0" [src]="message.from.avatar" alt="{{message.from.firstName}} {{message.from.lastName}}" />
+      <img *ngIf="message.fromRobot === true" [src]="message.from.avatar" alt="{{message.from.firstName}} {{message.from.lastName}}" />
     </li>
   </ul>
 </div>
