@@ -1,3 +1,4 @@
+import { CandidateScore } from './../domain/candidate-score';
 import { Skill } from '../domain/skill';
 import { Candidate } from '../domain/candidate';
 import { Observable } from 'rxjs/Rx';
@@ -41,10 +42,10 @@ export class PositionsService {
             .map((res: Response) => <Array<Array<Position>>> res.json());
     }
 
-    getPositionCandidates(positionId: number) : Observable<Array<Candidate>> {
+    getPositionCandidates(positionId: number) : Observable<Array<CandidateScore>> {
         return this.http
             .get(RouterUtils.positionCandidatesUrl(positionId))
-            .map((res: Response) => <Array<Candidate>> res.json());
+            .map((res: Response) => <Array<CandidateScore>> res.json());
     }
 
     getPositionRequirements(positionId: number) : Observable<Array<Skill>> {

@@ -1,4 +1,3 @@
-import { SKILLS } from './../../util/mocks';
 import { SkillService } from './../../services/skill.service';
 import { Skill } from '../../domain/skill';
 import { Position } from './../../domain/position';
@@ -29,9 +28,8 @@ export class EditPositionComponent implements OnInit {
     this.positionsService.getPosition(this.positionId)
       .subscribe(data => this.position = data);
     
-    this.skillService.getSkills()
-        .subscribe(data => this.skillList = data,
-                  error => this.skillList = SKILLS);
+    this.skillService.getAllSkills()
+        .subscribe(data => this.skillList = data);
   }
 
 }

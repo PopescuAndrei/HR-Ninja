@@ -59,15 +59,14 @@
   object-fit: cover;
 }
 
-.overlay {
-	z-index: 999999;
-	position: absolute;
-	color: yellow;
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 	font-size: 24px;
 	font-weight: bold;
-	left: 150px;
-	top: 350px;
-	display: block;
 }
 
 .requirements-list {
@@ -78,6 +77,7 @@
   max-width: 100%;
   background: #fff;
   padding: 8px;
+  margin-left:4px;
   border-radius: 5px;
   box-shadow: 0 0 10px silver;
   display: flex;
@@ -91,6 +91,7 @@
   object-fit: cover;
   margin-right: 15px;
   overflow: hidden;
+  border-radius: 25px;
 }
 
 .contact-card-image img {

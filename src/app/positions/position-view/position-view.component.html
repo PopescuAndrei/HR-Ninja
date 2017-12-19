@@ -1,44 +1,46 @@
 <div class="col-md-7 col-sm-7 col-xs-12">
 	<div class="card">
 		<div class="card-image">
-			<img [src]="position.image" alt="{{position.name}}" class="image darken">
-			<p class="overlay">{{position.title}}</p>
+			<img [src]="position?.image || ''" alt="{{position?.name}}" class="image darken">
+			<p class="centered">{{position?.name}}</p>
 		</div>
 		<div class="card-content">
-			<p class="card-content-job">{{position.description}}</p>
+			<p class="card-content-job">{{position?.description}}</p>
 			<h4 class="red-text">Requirements</h4>
 			<ul class="requirements-list list-no-bullets">
-				<li *ngFor="let requirement of positionRequirements">
-					<i class="ti-check-box"></i>
-						<span>
-							<span class="blue-text">{{requirement.level}}</span>
-							@ 
-							<span>{{requirement.name}}</span>
-						</span>
-				</li>
+			<li *ngFor="let requirement of positionRequirements">
+				<i class="ti-check-box"></i>
+				<span>
+					<span class="blue-text">{{requirement?.level}}</span>
+					@ 
+					<span>{{requirement?.name}}</span>
+				</span>
+			</li>
 			</ul>
 		</div>
 	</div>
 </div>
+
+
 <div class="col-md-5 col-sm-5 col-xs-12">
 	<div class="card card-user white-backgound">
 		<div class="image red">
 			<h2 class="text-center white-text" style="vertical-align: middle;">Candidates</h2>
 		</div>
 		<div class="content" style="height: 367px; overflow-y: scroll">
-			<div class="contact-card" *ngFor="let candidate of positionCandidates">
-				<div class="contact-card-image">
-					<img [src]="candidate.avatar">
+			<div class="row contact-card" *ngFor="let cs of candidateScores">
+				<div class="col-md-2">
+					<img [src]="cs.candidate.avatar" class="contact-card-image">
 				</div>
-				<div class="contact-card-info">
+				<div class="col-md-6 contact-card-info">
 					<div class="contact-card-name">
-						<a [routerLink]="['/candidates', candidate.id]">{{candidate.firstName}} {{candidate.lastName}}</a>
+						<a [routerLink]="['/candidates', cs.candidate.id]">{{cs.candidate.firstName}} {{cs.candidate.lastName}}</a>
 					</div>
-					<div class="contact-card-number">{{candidate.email.address}}</div>
+					<div class="contact-card-number">{{cs.candidate.email.address}}</div>
 				</div>
-				<div style="max-height: 50px; margin-left:25px; float:right;">
+				<div class="col-md-4" style="max-height: 50px; margin-left:25px; float:right;">
 					<p class="blue-text"><strong>Score:</strong></p>
-					<p class="red-text">{{candidate.score}}/100</p>
+					<p class="red-text">{{cs.score}}/100</p>
 				</div>
 			</div>
 		</div>

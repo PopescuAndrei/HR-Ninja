@@ -1,5 +1,4 @@
 import { Interest } from '../../domain/interest';
-import { EDUCATION, EXPERIENCES, GENERIC_CANDIDATE, INTERESTS, LANGUAGES, SKILLS } from './../../util/mocks';
 import { ChatMessage } from '../../domain/chat-message';
 import { CandidatesService } from './../../services/candidates.service';
 import { Experience } from './../../domain/experience';
@@ -36,28 +35,22 @@ export class CandidateViewComponent implements OnInit {
     );
 
     this.candidateService.getCandidate(this.candidateId)
-      .subscribe(data => this.candidate = data,
-                error => this.candidate = GENERIC_CANDIDATE);
+      .subscribe(data => this.candidate = data);
                 
     this.candidateService.getCandidateEducation(this.candidateId)
-        .subscribe(data => this.candidateEducation = data,
-                  error => this.candidateEducation = EDUCATION);
+        .subscribe(data => this.candidateEducation = data);
     
     this.candidateService.getCandidateExperience(this.candidateId)
-        .subscribe(data => this.candidateExperience = data,
-                  error => this.candidateExperience = EXPERIENCES);
+        .subscribe(data => this.candidateExperience = data);
 
     this.candidateService.getCandidateSkills(this.candidateId)
-      .subscribe(data => this.candidateSkills = data,
-                error => this.candidateSkills = SKILLS);
+      .subscribe(data => this.candidateSkills = data);
     
     this.candidateService.getCandidateInterests(this.candidateId)
-      .subscribe(data => this.candidateInterests = data,
-                error => this.candidateInterests = INTERESTS);
+      .subscribe(data => this.candidateInterests = data);
 
     this.candidateService.getCandidateLanguages(this.candidateId)
-      .subscribe(data => this.candidateLanguages = data,
-                error => this.candidateLanguages = LANGUAGES);
+      .subscribe(data => this.candidateLanguages = data);
 
     this.candidateService.getCandidateLikesNumber(this.candidateId)
       .subscribe(data => this.candidateLikesNumber = data,

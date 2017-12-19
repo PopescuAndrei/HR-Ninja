@@ -1,5 +1,4 @@
 import { COMMENT_NOT_SAVED, COMMENT_SAVED } from './../../util/messages';
-import { COMMENTS } from './../../util/mocks';
 import { NotificationService } from '../../services/notification.service';
 import { CandidatesService } from './../../services/candidates.service';
 import { User } from './../../domain/user';
@@ -33,8 +32,7 @@ export class CommentViewComponent implements OnInit {
     )
 
     this.candidateService.getCandidateComments(this.candidateId)
-      .subscribe(data => this.comments = data,
-                error => this.comments = COMMENTS);
+      .subscribe(data => this.comments = data);
 
     this.initCommentForm();
     this.appStore.getLoggedInUser().subscribe(user => this.user = user);

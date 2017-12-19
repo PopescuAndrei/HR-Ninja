@@ -1,4 +1,3 @@
-import { QUESTIONS } from './../util/mocks';
 import { NotificationService } from './../services/notification.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Position } from './../domain/position';
@@ -28,8 +27,7 @@ export class InterviewComponent implements OnInit {
 
   ngOnInit() {
     this.questionService.getQuestions()
-      .subscribe(data => this.questions = data,
-                error => this.questions = QUESTIONS);
+      .subscribe(data => this.questions = data);
 
     this.dragulaService
       .drop

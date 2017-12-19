@@ -7,6 +7,20 @@ export class NotificationService {
 	
 	constructor() {}
 
+	showInfo(notificationMessage: string): void {
+		$.notify({
+			icon: "ti-gift",
+			message: notificationMessage
+		},{
+			type: 'info',
+			timer: 4000,
+			placement: {
+				from: 'top',
+				align: 'right'
+			}
+		});
+	}
+
 	showSuccess(notificationMessage: string): void {
 		$.notify({
 			icon: "ti-gift",

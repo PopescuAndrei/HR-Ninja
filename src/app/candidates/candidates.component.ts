@@ -1,4 +1,3 @@
-import { CANDIDATES } from '../util/mocks';
 import { CandidatesService } from './../services/candidates.service';
 import { Candidate } from './../domain/candidate';
 import { Component, OnInit } from '@angular/core';
@@ -16,8 +15,7 @@ export class CandidatesComponent implements OnInit {
 
   ngOnInit() {
     this.candidateService.getCandidates()
-      .subscribe(data => this.candidates = data,
-                error => this.candidates = CANDIDATES);
+      .subscribe(data => this.candidates = data);
   }
 
 }

@@ -1,7 +1,6 @@
 import { Interest } from './../domain/interest';
 import { Observable } from 'rxjs/Rx';
 import { RouterUtils } from '../util/router.utils';
-import { CANDIDATES, COMMENTS, EDUCATION, INTERESTS, LANGUAGES, SKILLS, EXPERIENCES} from '../util/mocks';
 import { ChatMessage } from '../domain/chat-message';
 import { Experience } from './../domain/experience';
 import { Language } from '../domain/language';

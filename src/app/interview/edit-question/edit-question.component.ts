@@ -1,7 +1,6 @@
 import { FormGroup, FormControl } from '@angular/forms';
 import { NotificationService } from './../../services/notification.service';
 import { Reply } from './../../domain/reply';
-import { QUESTIONS, REPLIES } from './../../util/mocks';
 import { ActivatedRoute, Params } from '@angular/router';
 import { QuestionsService } from './../../services/questions.service';
 import { Question } from './../../domain/question';
@@ -30,12 +29,10 @@ export class EditQuestionComponent implements OnInit {
     );
 
     this.questionService.getQuestion(this.questionId)
-      .subscribe(data => this.question = data,
-                error => this.question = QUESTIONS[this.questionId]);
+      .subscribe(data => this.question = data);
 
     this.questionService.getQuestionReplies(this.questionId)
-        .subscribe(data => this.questionReplies = data,
-                error => this.questionReplies = REPLIES)
+        .subscribe(data => this.questionReplies = data)
   }
 
   /**

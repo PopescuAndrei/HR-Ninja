@@ -1,4 +1,3 @@
-import { GENERIC_CANDIDATE } from './../../util/mocks';
 import { ChatService } from './../../services/chat.service';
 import { CandidatesService } from './../../services/candidates.service';
 import { ActivatedRoute, Params } from '@angular/router';

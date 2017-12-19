@@ -11,7 +11,6 @@ import { PositionsService } from './services/positions.service';
 import { CandidatesService } from './services/candidates.service';
 import { PositionViewComponent } from './positions/position-view/position-view.component';
 import { PositionCardComponent } from './positions/position-card/position-card.component';
-import { CandidateListItemComponent } from './positions/candidate-list-item/candidate-list-item.component';
 import { ExperienceTimelineComponent } from './candidates/experience-timeline/experience-timeline.component';
 import { AppStoreService } from './app-store.service';
 import { CommentViewComponent } from './candidates/comment-view/comment-view.component';
@@ -41,7 +40,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
   declarations: [
     AppComponent, DashboardComponent,
     CandidatesComponent, CandidateCardComponent, CommentViewComponent, ChatViewComponent, ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
-    PositionsComponent, PositionCardComponent, PositionViewComponent, CandidateListItemComponent, CreatePositionComponent, EditPositionComponent,
+    PositionsComponent, PositionCardComponent, PositionViewComponent, CreatePositionComponent, EditPositionComponent,
     InterviewComponent, EditQuestionComponent,
     SettingsComponent
   ],

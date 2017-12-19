@@ -1,4 +1,4 @@
-import { CANDIDATES, SKILLS } from '../../util/mocks';
+import { CandidateScore } from './../../domain/candidate-score';
 import { Candidate } from './../../domain/candidate';
 import { PositionsService } from './../../services/positions.service';
 import { Skill } from '../../domain/skill';
@@ -16,7 +16,7 @@ export class PositionViewComponent implements OnInit {
   private positionId: number;
   private position: Position;
   private positionRequirements: Array<Skill>;
-  private positionCandidates: Array<Candidate>;
+  private candidateScores: Array<CandidateScore>;
 
   constructor(private route: ActivatedRoute, private positionsService: PositionsService) { }
   
@@ -27,10 +27,14 @@ export class PositionViewComponent implements OnInit {
     this.route.params.forEach(
       (params: Params) => this.positionId = params['id'] 
     );
-    this.positionCandidates = CANDIDATES[0];
+    
+    this.positionsService.getPosition(this.positionId)
+      .subscribe(data => this.position = data);
+
+    this.positionsService.getPositionCandidates(this.positionId)
+      .subscribe(data => this.candidateScores = data);
     
     this.positionsService.getPositionRequirements(this.positionId)
-    .subscribe(data => this.positionRequirements = data,
-              error => this.positionRequirements = SKILLS);
+      .subscribe(data => this.positionRequirements = data);
   }
 }
