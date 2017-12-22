@@ -3,6 +3,9 @@ export class RouterUtils {
 
 	static baseUrl: string =  environment.herokuUrl? "https://recruitingmessbot.herokuapp.com/api" : "http://localhost:8080/api";
 
+	static users = "/users";
+	static auth = "/users/auth";
+
 	static candidates: string = "/candidates";
 	static candidate: string = "/candidates/";
 	static skills: string = "/skills/";
@@ -25,6 +28,10 @@ export class RouterUtils {
 	static questions: string = "/questions";
 	static question: string = "/questions/";
 	static replies: string = "/replies";
+
+	static authUrl(): string {
+		return this.baseUrl + this.auth;
+	}
 
 	static candidatesUrl(): string {
 		return this.baseUrl + this.candidates; 
@@ -89,7 +96,7 @@ export class RouterUtils {
 	static allSkillsUrl(): string {
 		return this.baseUrl + this.allSkillsUrl;
 	}
-
+	
 	static positionsUrl(): string {
 		return this.baseUrl + this.positions;
 	}

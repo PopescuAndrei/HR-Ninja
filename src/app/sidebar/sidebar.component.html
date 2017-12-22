@@ -9,10 +9,23 @@
         </a>
     </div>
     <ul class="nav">
+        <li>
+            <a [routerLink]="['/login']" *ngIf="!isAuthenticated">
+                <i class="ti-unlock"></i>
+                <p>Login</p>
+            </a>
+        </li>
         <li *ngFor="let menuItem of menuItems" routerLinkActive="active" class="{{menuItem.class}}">
-            <a [routerLink]="[menuItem.path]">
+            
+            <a [routerLink]="[menuItem.path]" *ngIf="isAuthenticated">
                 <i class="{{menuItem.icon}}"></i>
                 <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+        <li>
+            <a (click)="logout()" *ngIf="isAuthenticated">
+                <i class="ti-lock"></i>
+                <p>Logout</p>
             </a>
         </li>
     </ul>

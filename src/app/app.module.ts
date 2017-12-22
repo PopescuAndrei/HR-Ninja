@@ -1,3 +1,5 @@
+import { LoginComponent } from './auth/login/login.component';
+import { AuthService } from './services/auth.service';
 import { SkillService } from './services/skill.service';
 import { EditPositionComponent } from './positions/edit-position/edit-position.component';
 import { EditQuestionComponent } from './interview/edit-question/edit-question.component';
@@ -12,7 +14,6 @@ import { CandidatesService } from './services/candidates.service';
 import { PositionViewComponent } from './positions/position-view/position-view.component';
 import { PositionCardComponent } from './positions/position-card/position-card.component';
 import { ExperienceTimelineComponent } from './candidates/experience-timeline/experience-timeline.component';
-import { AppStoreService } from './app-store.service';
 import { CommentViewComponent } from './candidates/comment-view/comment-view.component';
 import { EducationTimelineComponent } from './candidates/education-timeline/education-timeline.component';
 import { CandidateCardComponent } from './candidates/candidate-card/candidate-card.component';
@@ -39,6 +40,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
 @NgModule({
   declarations: [
     AppComponent, DashboardComponent,
+    LoginComponent,
     CandidatesComponent, CandidateCardComponent, CommentViewComponent, ChatViewComponent, ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
     PositionsComponent, PositionCardComponent, PositionViewComponent, CreatePositionComponent, EditPositionComponent,
     InterviewComponent, EditQuestionComponent,
@@ -56,7 +58,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     DragulaModule
   ],
   providers: [CandidatesService, ChatService, PositionsService, QuestionsService, SkillService,  
-              AppStoreService, NotificationService],
+              NotificationService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

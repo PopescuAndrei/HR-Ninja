@@ -7,7 +7,6 @@ import { SkillService } from './../../services/skill.service';
 import { Skill } from './../../domain/skill';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AppStoreService } from '../../app-store.service';
 import { Position } from '../../domain/position';
 import { SKILL_ADDED } from '../../util/messages';
 
@@ -31,10 +30,10 @@ export class CreatePositionComponent implements OnInit {
     private router: Router,
     private skillService: SkillService,
     private positionService: PositionsService,
-    private appStore: AppStoreService,
     private notificationService: NotificationService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
 
     this.skillService.getAllSkills()
       .subscribe(data => this.existingSkills = data);
@@ -43,8 +42,6 @@ export class CreatePositionComponent implements OnInit {
 
     this.initPositionForm();
     this.initSkillForm();
-
-    this.appStore.getLoggedInUser().subscribe(user => this.user = user);
   }
 
   initPositionForm(): void {

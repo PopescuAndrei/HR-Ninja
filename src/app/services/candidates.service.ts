@@ -8,15 +8,20 @@ import { Comment } from '../domain/comment';
 import { Education } from './../domain/education';
 import { Skill } from '../domain/skill';
 import { Candidate } from './../domain/candidate';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class CandidatesService {
 
-    constructor(private http: Http) { }
-
+    private headers: Headers; 
+    private options: RequestOptions;
+  
+    constructor(private http: Http) {
+        this.headers = new Headers({ 'Content-Type': 'application/json' });
+        this.options = new RequestOptions({ headers: this.headers });
+    }
     getCandidate(candidateId: number): Observable<Candidate> {
         return this.http
             .get(RouterUtils.candidateUrl(candidateId))
@@ -81,5 +86,11 @@ export class CandidatesService {
         return this.http
             .get(RouterUtils.candidateRatingUrl(candidateId))
             .map((res: Response) => <number> res.json());
+    }
+
+    createCandidateComment(candidateId: number, comment: Comment): Observable<Comment> {
+        return this.http
+            .post(RouterUtils.createCommentUrl(candidateId), JSON.stringify(comment), this.options)
+            .map((res: Response) => <Comment> res.json());
     }
 }

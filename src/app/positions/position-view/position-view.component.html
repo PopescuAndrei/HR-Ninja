@@ -2,21 +2,25 @@
 	<div class="card">
 		<div class="card-image">
 			<img [src]="position?.image || ''" alt="{{position?.name}}" class="image darken">
-			<p class="centered">{{position?.name}}</p>
+			<p class="centered white-text">{{position?.name}}</p>
 		</div>
 		<div class="card-content">
-			<p class="card-content-job">{{position?.description}}</p>
+			<div class="well">
+				<p class="card-content-job black-text">{{position?.description}}</p>
+			</div>
 			<h4 class="red-text">Requirements</h4>
-			<ul class="requirements-list list-no-bullets">
-			<li *ngFor="let requirement of positionRequirements">
-				<i class="ti-check-box"></i>
-				<span>
-					<span class="blue-text">{{requirement?.level}}</span>
-					@ 
-					<span>{{requirement?.name}}</span>
-				</span>
-			</li>
-			</ul>
+			<div class="well">
+				<ul class="requirements-list list-no-bullets">
+					<li *ngFor="let requirement of positionRequirements">
+						<i class="ti-check-box"></i>
+						<span>
+							<span class="blue-text">{{requirement?.level}}</span>
+							@ 
+							<span>{{requirement?.name}}</span>
+						</span>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </div>

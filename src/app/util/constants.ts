@@ -1,3 +1,5 @@
+import { Email } from './../domain/support.email';
+import { User } from './../domain/user';
 export const MALE_AVATARS: Array<string> = [
     'assets/img/faces/mCandidate1.png',
     'assets/img/faces/mCandidate2.png',
@@ -26,3 +28,5 @@ export const POSITION_BACKGROUNDS: Array<string> = [
     'assets/img/pos-bg/5.png',
     'assets/img/pos-bg/6.jpg'
 ]
+
+export const ANONYMOUS_USER = new User(0, "", "", new Email(""), "");

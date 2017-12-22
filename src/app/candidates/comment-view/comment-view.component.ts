@@ -2,7 +2,6 @@ import { COMMENT_NOT_SAVED, COMMENT_SAVED } from './../../util/messages';
 import { NotificationService } from '../../services/notification.service';
 import { CandidatesService } from './../../services/candidates.service';
 import { User } from './../../domain/user';
-import { AppStoreService } from './../../app-store.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Comment } from './../../domain/comment';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -21,7 +20,6 @@ export class CommentViewComponent implements OnInit {
   private commentForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
-    private appStore: AppStoreService,
     private candidateService: CandidatesService,
     private notificationService: NotificationService) { }
 
@@ -35,7 +33,7 @@ export class CommentViewComponent implements OnInit {
       .subscribe(data => this.comments = data);
 
     this.initCommentForm();
-    this.appStore.getLoggedInUser().subscribe(user => this.user = user);
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
   }
 
   initCommentForm() {
@@ -48,9 +46,17 @@ export class CommentViewComponent implements OnInit {
    if(this.commentForm.value.message) {
     let newComment = new Comment(this.user.firstName + " " + this.user.lastName, this.user.avatar, this.commentForm.value.message,new Date());
     
-    this.notificationService.showSuccess(COMMENT_SAVED);
-    this.comments.push(newComment);
-    this.initCommentForm();
+    this.candidateService.createCandidateComment(this.candidateId, newComment)
+      .subscribe(
+        result => {
+          newComment = result; 
+          this.comments.push(newComment);
+          this.notificationService.showSuccess(COMMENT_SAVED);
+          this.initCommentForm();
+        }, error => {
+          this.notificationService.showError(COMMENT_NOT_SAVED + "." + error)
+        }
+      );
    } else {
      this.notificationService.showError(COMMENT_NOT_SAVED);
    }

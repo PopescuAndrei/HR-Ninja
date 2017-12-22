@@ -1,3 +1,4 @@
+import { LoginComponent } from './auth/login/login.component';
 import { EditPositionComponent } from './positions/edit-position/edit-position.component';
 import { EditQuestionComponent } from './interview/edit-question/edit-question.component';
 import { CreatePositionComponent } from './positions/create-position/create-position.component';
@@ -15,8 +16,11 @@ import { Routes } from '@angular/router';
 export const AppRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'dashboard',
+        redirectTo: 'login',
         pathMatch: 'full',
+    }, {
+        path: 'login',
+        component: LoginComponent
     }, {
         path: 'dashboard',
         component: DashboardComponent
