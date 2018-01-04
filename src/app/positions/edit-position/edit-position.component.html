@@ -1,24 +1,68 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="card">
-      <div class="card-image">
-        <img [src]="position.image" alt="{{position.name}}" class="image darken">
-        <p class="overlay">{{position.name}}</p>
+	<div class="card">
+		<div class="card-image">
+			<img [src]="position?.image || ''" alt="{{position?.name}}" class="image darken">
+			<p class="centered white-text">{{position?.name}}</p>
+		</div>
+    <div class="card-content">
+			<div class="well">
+				<p class="card-content-job black-text">{{position?.description}}</p>
       </div>
-      <div class="card-content">
-        <p class="card-content-job">{{position.description}}</p>
-        <h4 class="red-text">Requirements</h4>
-        <ul class="requirements-list list-no-bullets">
-          <li *ngFor="let requirement of position.requirements">
-            <i class="ti-check-box"></i>
-              <span>
-                <span class="blue-text">{{requirement.level}}</span>
-                @ 
-                <span>{{requirement.name}}</span>
-              </span>
-          </li>
-        </ul>
+
+      <h4 class="red-text">Requirements:</h4>
+      <div class="col-md-12 col-sm-12-col-md-12">
+        <div class="content table-responsive" *ngIf="positionRequirements?.length > 0">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Level</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let positionRequirement of positionRequirements">
+                        <td>{{positionRequirement.name}}</td>
+                        <td>{{positionRequirement.level}}</td>
+                        <td>
+                            <button type="button" class="btn text-center"><i class="fa fa-trash" aria-hidden="true" (click)="removeSkill(positionRequirement)"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>  
+        <p *ngIf="positionRequirements?.length === 0" class="well no-requirements">
+          No requirements associated with the position 
+          <span class="emoji-highlight">:( </span> 
+          You can start adding just below 
+          <span class="emoji-highlight">;) </span>
+        </p>
+      </div>
+
+      <div class="col-md-12 col-sm-12-col-xs-12">
+        <form class="form-horizontal" role="form" [formGroup]="skillForm">
+          <div class="form-group">
+            <label class="control-label col-sm-2 red-text" for="skillName">Add Skill:</label>
+            <div class="col-sm-10">
+              <select class="form-control" formControlName="skillName" placeholder="Choose a skill..." required>
+                <option *ngFor="let skill of existingSkills" value="{{skill.name}}">{{skill.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2 red-text" for="level">Skill level:</label>
+              <div class="col-sm-10">
+                <input type="number" step="1" min="0" max="100" class="form-control" formControlName="level" placeholder="Choose the desired skill level: 0-100" required>
+              </div>
+          </div>
+          <div class="col-sm-12 text-center">
+            <button class="btn btn-round red white-text" type="submit" value="Add Skill" (click)="addSkill()">Add Skill</button>  
+          </div>
+        </form>
       </div>
     </div>
   </div>
-  
+</div>
+
+
   

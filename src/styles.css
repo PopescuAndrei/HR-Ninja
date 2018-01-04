@@ -46,3 +46,12 @@ body {
 .cyan-text { color: #449C76;}
 .green-text { color: #88B25C;}
 .light-green-text { color: #6AB73E; }
+
+.emoji-highlight {
+    font-weight: bolder;
+    color: rgb(253, 174, 5);
+}
+
+.text-bold {
+    font-weight: bolder;
+}

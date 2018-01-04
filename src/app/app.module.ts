@@ -1,3 +1,4 @@
+import { SkillsComponent } from './skills/skills.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './services/auth.service';
 import { SkillService } from './services/skill.service';
@@ -43,6 +44,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     LoginComponent,
     CandidatesComponent, CandidateCardComponent, CommentViewComponent, ChatViewComponent, ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
     PositionsComponent, PositionCardComponent, PositionViewComponent, CreatePositionComponent, EditPositionComponent,
+    SkillsComponent,
     InterviewComponent, EditQuestionComponent,
     SettingsComponent
   ],

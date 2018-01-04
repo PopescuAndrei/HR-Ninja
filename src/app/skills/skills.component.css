@@ -1,0 +1,18 @@
+.list-item {
+	top: 0;
+	left: 0;
+	width: 100%;
+  }
+  
+  .item-content {
+	height: 100%;
+	border: 0px solid rgba(123, 123, 123, 0.498039);
+	border-radius: 4px;
+	line-height: 40px;
+	padding-left: 32px;
+	font-weight: 400;
+	margin-bottom: 10px;
+	background-color: white;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+			box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  }

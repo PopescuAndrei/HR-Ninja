@@ -18,6 +18,7 @@ export const ROUTES: RouteInfo[] = [
     { path: 'positions', title: 'Available Positions',  icon:'ti-announcement', class: ''},
     { path: 'candidates', title: 'Candidates',  icon:'ti-user', class: ''},
     { path: 'interview', title: 'Interview',  icon:'ti-notepad', class: ''},
+    { path: 'skills', title: 'Skills', icon: 'ti-microphone-alt', class: ''},
     { path: 'settings', title: 'Profile Settings',  icon:'ti-settings', class: ''}
 ];
 

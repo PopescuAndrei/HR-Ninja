@@ -2,7 +2,10 @@
   margin: 0 auto;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 3em;
-  max-height: 550px;
+}
+
+.table-striped {
+  table-layout: fixed;
 }
 
 .card .card-content {
@@ -13,7 +16,6 @@
   padding-bottom: 8%;
   overflow: hidden;
   min-height: 200px;
-  max-height: 370px;
 }
 
 .card .card-content .card-content-name {
@@ -59,17 +61,14 @@
   object-fit: cover;
 }
 
-.overlay {
-  border-top-left-radius: 500px;
-  border-top-right-radius: 500px;
-  z-index: 999999;
+/* Centered text */
+.centered {
   position: absolute;
-  color: yellow;
-  font-size: 24px;
-  font-weight: bold;
-  left: 150px;
-  top: 350px;
-  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	font-size: 24px;
+	font-weight: bold;
 }
 
 .requirements-list {
@@ -80,6 +79,7 @@
   max-width: 100%;
   background: #fff;
   padding: 8px;
+  margin-left:4px;
   border-radius: 5px;
   box-shadow: 0 0 10px silver;
   display: flex;
@@ -93,6 +93,7 @@
   object-fit: cover;
   margin-right: 15px;
   overflow: hidden;
+  border-radius: 25px;
 }
 
 .contact-card-image img {
@@ -102,4 +103,8 @@
 
 .contact-card-name {
   text-transform: capitalize;
+}
+
+.no-requirements {
+  padding-bottom: 25px;
 }

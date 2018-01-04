@@ -12,6 +12,7 @@ import { CandidateViewComponent } from './candidates/candidate-view/candidate-vi
 import { CandidatesComponent } from './candidates/candidates.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Routes } from '@angular/router';
+import { SkillsComponent } from './skills/skills.component';
 
 export const AppRoutes: Routes = [
     {
@@ -54,6 +55,9 @@ export const AppRoutes: Routes = [
     }, {
         path: 'interview/edit-question/:id',
         component: EditQuestionComponent
+    }, {
+        path: 'skills',
+        component: SkillsComponent
     }, {
         path: 'settings',
         component: SettingsComponent

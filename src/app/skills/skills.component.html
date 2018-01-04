@@ -1,0 +1,26 @@
+<div class="col-md-12 col-sm-12 col-xs-12"> 
+  <form class="form-horizontal" role="form" [formGroup]="skillForm">
+    <div class="form-group">
+      <label class="control-label col-sm-2 red-text" for="skillName">New Skill:</label>
+      <div class="col-sm-8">
+          <input type="text" class="form-control" formControlName="skillName" placeholder="Another technology? Again?" required>
+      </div>
+      <div class="col-sm-2 text-center">
+        <button class="btn btn-round red white-text" type="submit" value="Add Skill" (click)="addSkill()">Add Skill</button>  
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="well">  
+    <h4 class="blue-text text-center text-bold">Existing skills:</h4>
+    
+    <div class="list-item" *ngFor="let skill of existingSkills">
+        <div class="item-content blue-text text-bold">{{skill.name}}</div>
+    </div>
+  </div>
+</div>
+  
+  
+    

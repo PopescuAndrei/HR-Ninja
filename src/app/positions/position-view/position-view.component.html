@@ -10,7 +10,7 @@
 			</div>
 			<h4 class="red-text">Requirements</h4>
 			<div class="well">
-				<ul class="requirements-list list-no-bullets">
+				<ul class="requirements-list list-no-bullets" *ngIf="positionRequirements?.length > 0">
 					<li *ngFor="let requirement of positionRequirements">
 						<i class="ti-check-box"></i>
 						<span>
@@ -20,6 +20,7 @@
 						</span>
 					</li>
 				</ul>
+				<p *ngIf="positionRequirements?.length === 0">No requirements defined</p>
 			</div>
 		</div>
 	</div>
@@ -46,6 +47,9 @@
 					<p class="blue-text"><strong>Score:</strong></p>
 					<p class="red-text">{{cs.score}}/100</p>
 				</div>
+			</div>
+			<div class="row contact-card" *ngIf="candidateScores?.length === 0">
+				<p>No candidates have been evaluated yet. Check back later! :)</p>
 			</div>
 		</div>
 	</div>

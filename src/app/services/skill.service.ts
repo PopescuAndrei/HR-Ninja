@@ -22,18 +22,34 @@ export class SkillService {
             .map((res: Response) => <Array<Skill>> res.json());
     }
     
-	// TODO: add skill routings
-    getSkillsForCandidate(candidateId: number): Observable<Array<Skill>> {
+	getSkillsForCandidate(candidateId: number): Observable<Array<Skill>> {
         return this.http
             .get(RouterUtils.candidateSkillsUrl(candidateId))
             .map((res: Response) => <Array<Skill>> res.json());
     }
 
-
-
     createSkillsForPosition(positionId: number, skills: Array<Skill>): Observable<Array<Skill>> {
         return this.http
             .post(RouterUtils.createPositionRequirementsBulkUrl(positionId), JSON.stringify(skills), this.options)
             .map((res: Response) => <Array<Skill>> res.json());
+    }
+
+    createSkill(skill: Skill): Observable<Skill> {
+        return this.http
+            .post(RouterUtils.createSkillUrl(), JSON.stringify(skill), this.options)
+            .map((res:Response) => <Skill> res.json());
+    }
+    
+    createPositionRequirement(positionId: number, skill: Skill): Observable<Skill> {
+        return this.http
+            .post(RouterUtils.createPositionRequirementUrl(positionId), JSON.stringify(skill), this.options)
+            .map((res:Response) => <Skill> res.json());
+    }
+
+    deletePositionRequirement(positionId: number, skillName: string): Observable<Skill> {
+        return this.http
+            .delete(RouterUtils.deletePositionRequirementUrl(positionId, skillName))
+            .map((res: Response) => <Skill> res.json());
+
     }
 }

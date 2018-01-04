@@ -94,7 +94,7 @@ export class RouterUtils {
 	}
 
 	static allSkillsUrl(): string {
-		return this.baseUrl + this.allSkillsUrl;
+		return this.baseUrl + this.positionRequirements;
 	}
 	
 	static positionsUrl(): string {
@@ -113,6 +113,10 @@ export class RouterUtils {
 		return this.positionUrl(positionId);
 	}
 
+	static createSkillUrl(): string {
+		return this.baseUrl + this.positionRequirements;
+	}
+	
 	static positionRequirementsUrl(positionId: number): string {
 		return this.baseUrl + this.position + positionId + this.positionRequirements;
 	}
@@ -122,11 +126,11 @@ export class RouterUtils {
 	}
 
 	static createPositionRequirementsBulkUrl(positionId: number): string {
-		return this.createPositionRequirementsBulkUrl(positionId);
+		return this.baseUrl + this.position + positionId + this.savePositionRequirementsBulk;
 	}
 
-	static deletePositionRequirementUrl(positionId: number, skillId: number): string {
-		return this.positionRequirementsUrl(positionId) + "/" + skillId;
+	static deletePositionRequirementUrl(positionId: number, skillName: string): string {
+		return this.positionRequirementsUrl(positionId) + "/" + skillName;
 	}
 
 	static positionCandidatesUrl(positionId: number): string {
