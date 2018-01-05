@@ -1,3 +1,4 @@
+import { REPLY_NOT_REMOVED, REPLY_REMOVED, REPLY_INVALID, QUESTION_EDITED, REPLY_ADDED, REPLY_NOT_ADDED, QUESTION_NOT_EDITED, QUESTION_INVALID } from './../../util/messages';
 import { FormGroup, FormControl } from '@angular/forms';
 import { NotificationService } from './../../services/notification.service';
 import { Reply } from './../../domain/reply';
@@ -16,8 +17,11 @@ export class EditQuestionComponent implements OnInit {
   private questionId: number;
   private question: Question;
   private questionReplies: Array<Reply>;
+
   private editQuestionForm: FormGroup;
   private addReplyForm: FormGroup;
+
+  private saveDisabled: boolean;
 
   constructor(private route: ActivatedRoute,
               private notificationService: NotificationService, 
@@ -28,11 +32,26 @@ export class EditQuestionComponent implements OnInit {
       (params: Params) => this.questionId = params['id']
     );
 
+    this.initEditQuestionForm();
+    this.initAddReplyForm();
+
+    this.questionService.findProgress()
+      .subscribe(data => {
+        this.saveDisabled = data;
+        console.log(this.saveDisabled);
+      });
+      
     this.questionService.getQuestion(this.questionId)
-      .subscribe(data => this.question = data);
+      .subscribe(
+        data => {
+          this.question = data;
+          this.editQuestionForm.value.question = this.question.query;
+        }
+      );
 
     this.questionService.getQuestionReplies(this.questionId)
         .subscribe(data => this.questionReplies = data)
+
   }
 
   /**
@@ -53,6 +72,23 @@ export class EditQuestionComponent implements OnInit {
     })
   }
 
+  private updateQuestion() {
+    if(this.editQuestionForm.value.question) {
+      this.question.query = this.editQuestionForm.value.question;
+
+      this.questionService.updateQuestion(this.question)
+        .subscribe(
+          data => {
+            this.notificationService.showSuccess(QUESTION_EDITED);
+          }, error => {
+            this.notificationService.showError(QUESTION_NOT_EDITED);
+          }
+        );
+    } else {
+      this.notificationService.showError(QUESTION_INVALID);
+    }
+  }
+
   /**
    * Add a reply in the list
    */
@@ -60,10 +96,18 @@ export class EditQuestionComponent implements OnInit {
     if(this.addReplyForm.value.reply) {
       let newReply = new Reply(null, this.question, this.addReplyForm.value.reply);
 
-      this.questionReplies.push(newReply);
-      this.initAddReplyForm();
+      this.questionService.addReplyForQuestion(this.questionId, newReply)
+        .subscribe(
+          data => {
+            this.questionReplies.push(data);
+            this.notificationService.showSuccess(REPLY_ADDED);
+            this.initAddReplyForm();
+          }, error => {
+            this.notificationService.showError(REPLY_NOT_ADDED);
+          }
+        );
     } else {
-      console.log("not working");
+      this.notificationService.showError(REPLY_INVALID);
     }
   }
 
@@ -72,12 +116,20 @@ export class EditQuestionComponent implements OnInit {
    * @param reply
    */
   removeReply(reply: Reply) {
-    console.log("remove clicked");
     let replyIndex: number = this.questionReplies.indexOf(reply);
-    this.questionReplies.splice(replyIndex, 1);
-  }
 
-  private save() {
-    this.notificationService.showSuccess("Save successfull");
+    if(reply.id > 0) {
+      this.questionService.removeReply(this.questionId, reply.id)
+        .subscribe(
+          data => {
+            this.questionReplies.splice(replyIndex, 1);
+            this.notificationService.showSuccess(REPLY_REMOVED);
+          }, error => {
+            this.notificationService.showError(REPLY_NOT_REMOVED);
+          }
+        );
+    } else {
+      this.questionReplies.splice(replyIndex, 1);
+    }
   }
 }

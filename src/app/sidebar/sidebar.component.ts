@@ -38,6 +38,9 @@ export class SidebarComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.isAuthenticated = JSON.parse(localStorage.getItem('authenticated'));
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    
     this.authService.watchAuthenticatedStatus()
         .subscribe(
             (data:boolean) => {

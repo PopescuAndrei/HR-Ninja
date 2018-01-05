@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +12,8 @@ export class AppComponent implements OnInit {
   public isAuthenticated: boolean;
 
   constructor (
-    private authService: AuthService) {
+    private authService: AuthService,
+    private router: Router) {
   }
 
   ngOnInit() {

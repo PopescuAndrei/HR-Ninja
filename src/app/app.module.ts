@@ -1,3 +1,4 @@
+import { AuthGuardService } from './services/auth.guard.service';
 import { SkillsComponent } from './skills/skills.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AuthService } from './services/auth.service';
@@ -37,6 +38,7 @@ import { NavbarModule} from './shared/navbar/navbar.module';
 import { RoundProgressModule } from 'angular-svg-round-progressbar';
 
 import { DashboardComponent }   from './dashboard/dashboard.component'
+import { PublicPositionViewComponent } from './positions/public-position-view/public-position-view.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     LoginComponent,
     CandidatesComponent, CandidateCardComponent, CommentViewComponent, ChatViewComponent, ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
     PositionsComponent, PositionCardComponent, PositionViewComponent, CreatePositionComponent, EditPositionComponent,
+    PublicPositionViewComponent,
     SkillsComponent,
     InterviewComponent, EditQuestionComponent,
     SettingsComponent
@@ -60,7 +63,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component'
     DragulaModule
   ],
   providers: [CandidatesService, ChatService, PositionsService, QuestionsService, SkillService,  
-              NotificationService, AuthService],
+              NotificationService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

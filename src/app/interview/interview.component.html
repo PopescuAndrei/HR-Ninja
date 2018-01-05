@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-2">
           <div class="form-group" style="width:100%;">
-            <button class="btn btn-round blue white-text" style="width:100%;" type="submit" value="Save All" (click)="saveAll()">Save All</button>
+            <button class="btn btn-round blue white-text" style="width:100%;" type="submit" value="Save All" (click)="saveAll()" [disabled]="saveDisabled">Save All</button>
           </div>
         </div>
       </form>      
@@ -21,14 +21,15 @@
   
   <div class="row">
     <div class="col-md-12">
+      <div class="well well-notice">Modifying the interview structure is not available if interviews are in progress.</div>
       <div class="well well-hint">
-        <span class="hint">Did you know you can use the following keywords in your text:</span>
+        <span class="hint text-bold">Did you know you can use the following keywords in your text:</span>
         <ul class="list-no-bullets">
           <li>
-            <span class="hint-keyword">:candidate</span> to refer the candidate by his/hers name;
+            <span class="hint-keyword text-bold">:candidate.name</span> to refer the candidate by his/hers name;
           </li>
           <li>
-            <span class="hint-keyword">:candidate</span> to refer the candidate by his/hers name;
+            <span class="hint-keyword text-bold">:institution</span> to refer the candidate by his/hers name;
           </li>
         </ul>
       </div>
@@ -40,7 +41,7 @@
         <div class="notice">
             <strong class="position">{{question.position}}</strong> {{question.query}}
             <span class="question-buttons" style="float:right; vertical-align: middle;">
-                <a [routerLink]="['/interview/edit-question/', question.id]"><button type="button" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
+                <a *ngIf="question?.id" [routerLink]="['/interview/edit-question/', question?.id]"><button type="button" class="btn"><i class="fa fa-pencil" aria-hidden="true"></i></button></a>
                 <button type="button" class="btn"><i class="fa fa-trash" aria-hidden="true" (click)="removeQuestion(question)"></i></button>
             </span>
         </div>

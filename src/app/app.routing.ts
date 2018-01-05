@@ -1,3 +1,4 @@
+import { PublicPositionViewComponent } from './positions/public-position-view/public-position-view.component';
 import { LoginComponent } from './auth/login/login.component';
 import { EditPositionComponent } from './positions/edit-position/edit-position.component';
 import { EditQuestionComponent } from './interview/edit-question/edit-question.component';
@@ -13,6 +14,7 @@ import { CandidatesComponent } from './candidates/candidates.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { Routes } from '@angular/router';
 import { SkillsComponent } from './skills/skills.component';
+import { AuthGuardService } from './services/auth.guard.service';
 
 export const AppRoutes: Routes = [
     {
@@ -24,42 +26,58 @@ export const AppRoutes: Routes = [
         component: LoginComponent
     }, {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'candidates',
-        component: CandidatesComponent
+        component: CandidatesComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'candidates/:id',
-        component: CandidateViewComponent
+        component: CandidateViewComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'candidates/:id/comments',
-        component: CommentViewComponent
+        component: CommentViewComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'candidates/:id/chat',
-        component: ChatViewComponent
+        component: ChatViewComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'positions',
-        component: PositionsComponent
+        component: PositionsComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'positions/new',
-        component: CreatePositionComponent
+        component: CreatePositionComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'positions/edit-position/:id',
-        component: EditPositionComponent
+        component: EditPositionComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'positions/:id',
-        component: PositionViewComponent
+        component: PositionViewComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'interview',
-        component: InterviewComponent
+        component: InterviewComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'interview/edit-question/:id',
-        component: EditQuestionComponent
+        component: EditQuestionComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'skills',
-        component: SkillsComponent
+        component: SkillsComponent,
+        canActivate: [AuthGuardService]
     }, {
         path: 'settings',
-        component: SettingsComponent
+        component: SettingsComponent,
+        canActivate: [AuthGuardService]
+    }, {
+        path: 'public-positions/:id',
+        component: PublicPositionViewComponent
     }
 ]

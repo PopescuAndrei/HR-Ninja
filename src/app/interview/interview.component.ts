@@ -1,3 +1,4 @@
+import { QUESTIONS_SAVED, QUESTIONS_NOT_SAVED } from './../util/messages';
 import { NotificationService } from './../services/notification.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Position } from './../domain/position';
@@ -15,6 +16,7 @@ export class InterviewComponent implements OnInit {
 
   private questions: Array<Question>;
   private addQuestionForm: FormGroup;
+  private saveDisabled: boolean;
 
   constructor(private questionService: QuestionsService, 
               private dragulaService: DragulaService,
@@ -28,6 +30,12 @@ export class InterviewComponent implements OnInit {
   ngOnInit() {
     this.questionService.getQuestions()
       .subscribe(data => this.questions = data);
+
+    this.questionService.findProgress()
+      .subscribe(data => {
+        this.saveDisabled = data;
+        console.log(this.saveDisabled);
+      });
 
     this.dragulaService
       .drop
@@ -147,7 +155,13 @@ export class InterviewComponent implements OnInit {
    * Save all questions in the list and update their positions
    */
   private saveAll() {
-    this.notificationService.showSuccess("Save succesful");
-    //this.questions.dbSaveAdicaAjaxCall();
+    
+    this.questionService.updateQuestions(this.questions)
+      .subscribe(data => {
+        this.notificationService.showSuccess(QUESTIONS_SAVED);
+      }, error => {
+        this.notificationService.showError(QUESTIONS_NOT_SAVED)
+      }
+    )
   }
 }

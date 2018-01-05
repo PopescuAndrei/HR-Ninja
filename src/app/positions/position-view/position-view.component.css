@@ -46,6 +46,8 @@
   -o-transition: z-index 0s 0.2s;
   transition: z-index 0s 0.2s;
   background-color: #000000;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
 }
 
 .card .card-image img {

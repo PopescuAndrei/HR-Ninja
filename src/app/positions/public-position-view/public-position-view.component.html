@@ -1,3 +1,36 @@
-<p>
-  public-position-view works!
-</p>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="card-image">
+        <img [src]="position?.image || ''" alt="{{position?.name}}" class="image darken">
+        <p class="centered white-text">{{position?.name}}</p>
+      </div>
+      <div class="card-content">
+        <div class="well">
+          <p class="card-content-job black-text">{{position?.description}}</p>
+        </div>
+  
+        <h4 class="red-text">Requirements:</h4>
+        <div class="col-md-12 col-sm-12-col-md-12">
+          <div class="content table-responsive" *ngIf="positionRequirements?.length > 0">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Skill</th>
+                          <th>Level</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let positionRequirement of positionRequirements">
+                          <td>{{positionRequirement.name}}</td>
+                          <td>{{positionRequirement.level}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>  
+          <p *ngIf="positionRequirements?.length === 0" class="well no-requirements">
+            No requirements associated with the position
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -29,6 +29,8 @@ export class RouterUtils {
 	static question: string = "/questions/";
 	static replies: string = "/replies";
 
+	static progress: string = "/interviewProgress";
+
 	static authUrl(): string {
 		return this.baseUrl + this.auth;
 	}
@@ -145,7 +147,7 @@ export class RouterUtils {
 		return this.baseUrl + this.question + questionId;
 	}
 
-	static createQuestionUrl(): string {
+	static updateQuestionsUrl(): string {
 		return this.questionsUrl();
 	}
 
@@ -163,5 +165,9 @@ export class RouterUtils {
 
 	static deleteReplyUrl(questionId: number, replyId: number): string {
 		return this.repliesUrl(questionId) + "/" + replyId;
+	}
+
+	static findProgressUrl(): string {
+		return this.baseUrl + this.questions + this.progress;
 	}
 }

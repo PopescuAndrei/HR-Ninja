@@ -41,7 +41,6 @@ export class AuthService {
   logout() {
     //remove user from local storage to log user out
     localStorage.clear();
-    localStorage.clear();
     localStorage.setItem('authenticated', JSON.stringify(false));
     this.authenticatedStatus.next(false);
   }

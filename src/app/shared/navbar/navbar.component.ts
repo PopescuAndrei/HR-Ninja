@@ -3,6 +3,19 @@ import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
+export interface SubRouteInfo {
+    path: string;
+    title: string;
+}
+
+export const SUBROUTES: SubRouteInfo[] = [
+    { path:'edit-position/', title:'Edit Position'},
+    { path: 'positions/', title:'View position'},
+    { path: '/chat', title: 'Chat'},
+    { path: '/comments', title: 'Comments'},
+    { path: 'candidates/', title: 'View candidate'},
+    { path: '/edit-question', title: 'Edit Question'}
+];
 
 @Component({
   moduleId: module.id,
@@ -15,6 +28,7 @@ export class NavbarComponent implements OnInit {
   private nativeElement: Node;
   private toggleButton;
   private sidebarVisible: boolean;
+
 
   @ViewChild("navbar") button;
 
@@ -33,10 +47,15 @@ export class NavbarComponent implements OnInit {
   getTitle(){
       var titlee = window.location.pathname;
       titlee = titlee.substring(1);
-      for(var item = 0; item < this.listTitles.length; item++){
+      for(var item = 0; item < this.listTitles.length; item++) {
           if(this.listTitles[item].path === titlee){
               return this.listTitles[item].title;
           }
+      }
+      for(var item=0; item < SUBROUTES.length; item++) {
+        if(titlee.includes(SUBROUTES[item].path)) {
+            return SUBROUTES[item].title;
+        }
       }
       return 'Dashboard';
   }
