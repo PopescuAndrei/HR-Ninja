@@ -24,3 +24,6 @@ export const REPLY_REMOVED = "The reply was succesfully removed.";
 export const REPLY_NOT_REMOVED = "The reply was not removed. Please try again!";
 
 export const SERVER_ERROR = "Uuups. Something went terribly wrong. Please try again or contact the administrator.";
+
+export const NO_CANDIDATE_SELECTED = "Please select a candidate first!";
+export const NO_POSITION_SELECTED = "Please select a position first!";

@@ -14,7 +14,9 @@ export const SUBROUTES: SubRouteInfo[] = [
     { path: '/chat', title: 'Chat'},
     { path: '/comments', title: 'Comments'},
     { path: 'candidates/', title: 'View candidate'},
-    { path: '/edit-question', title: 'Edit Question'}
+    { path: '/edit-question', title: 'Edit Question'},
+    { path: '/comparison', title: 'Candidate - Candidate Comparison'},
+    { path: '/positionComparison', title: 'Candidate - Position Comparison'}
 ];
 
 @Component({

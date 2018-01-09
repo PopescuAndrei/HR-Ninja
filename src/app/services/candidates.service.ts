@@ -93,4 +93,10 @@ export class CandidatesService {
             .post(RouterUtils.createCommentUrl(candidateId), JSON.stringify(comment), this.options)
             .map((res: Response) => <Comment> res.json());
     }
+
+    getOtherCandidates(candidateId: number): Observable<Array<Candidate>> {
+        return this.http
+            .get(RouterUtils.candidateOthersUrl(candidateId))
+            .map((res: Response) => <Array<Candidate>> res.json());
+    }
 }

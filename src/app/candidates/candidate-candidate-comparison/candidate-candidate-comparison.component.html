@@ -1,0 +1,305 @@
+<div class="container-fluid">
+  <div class="row-eq-height"><!-- ROW -->
+      <div class="col-lg-12">
+          <div class="card card-user">
+              <div class="image blue"></div>
+              <div class="content">
+                  <div class="author">
+                      <img class="avatar border-white" [src]="firstCandidate?.avatar || ''" alt="..."/>
+                      <h4 class="title">
+                          <span class="blue-text">{{firstCandidate?.firstName}} {{firstCandidate?.lastName}}</span>
+                          <br />
+                          <a href="#"><small><span class="black-text">{{firstCandidate?.email.address}}</span></small></a>
+                      </h4>
+                  </div>
+                  <p class="description text-center">{{firstCandidate?.description}}</p>
+                  
+                  <div class="text-center">
+                      <a [routerLink]="['/candidates', fCandidateId, 'chat']"><button class="btn btn-round dark-primary-color">Chat Thread</button></a>
+                  </div>
+              </div>
+              <hr>
+              <div class="text-center">
+                  <div class="row">
+                      <div class="col-md-3 col-md-offset-1">
+                          <a [routerLink]="['/candidates', fCandidateId, 'comments']">
+                              <h5>
+                                  <span class="blue-text">{{fCandidateCommentsNumber}}</span>
+                                  <br /><small>Comments</small>
+                              </h5>
+                          </a>
+                      </div>
+                      <div class="col-md-4">
+                          <h5>
+                          <span class="candidate-rating">{{fCandidateLikesNumber}}</span><br />
+                          <small>Likes</small>
+                          </h5>
+                      </div>
+                      <div class="col-md-3">
+                          <h5>
+                          <span class="candidate-rating">{{fCandidateRating}}</span>
+                          <br /><small>/5</small>
+                          </h5>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-2 col-md-2 text-center" style="margin-top:15%;">
+        <i class="ti-arrows-horizontal" style="color: #235fdf;"></i>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="card card-user">
+            <div class="image red">
+
+            </div>
+            <div class="content">
+                <div class="author">
+                    <img class="avatar border-white" [src]="secondCandidate?.avatar || ''" alt="..."/>
+                    <h4 class="title">
+                        <span class="red-text">{{secondCandidate?.firstName}} {{secondCandidate?.lastName}}</span>
+                        <br />
+                        <a href="#"><small><span class="black-text">{{secondCandidate?.email.address}}</span></small></a>
+                    </h4>
+                </div>
+                <p class="description text-center">{{secondCandidate?.description}}</p>
+                
+                <div class="text-center">
+                    <a [routerLink]="['/candidates', sCandidateId, 'chat']"><button class="btn btn-round dark-primary-color">Chat Thread</button></a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1">
+                        <a [routerLink]="['/candidates', sCandidateId, 'comments']">
+                            <h5>
+                                <span class="red-text">{{sCandidateCommentsNumber}}</span>
+                                <br /><small>Comments</small>
+                            </h5>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>
+                        <span class="candidate-rating">{{sCandidateLikesNumber}}</span><br />
+                        <small>Likes</small>
+                        </h5>
+                    </div>
+                    <div class="col-md-3">
+                        <h5>
+                        <span class="candidate-rating">{{sCandidateRating}}</span>
+                        <br /><small>/5</small>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-eq-height">
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image blue">
+                    <h2 class="text-center white-text" style="vertical-align: middle;">Skills</h2>
+                </div>
+                <div class="content" style="height: 261px; overflow-y: hidden">
+                    <ul class="bean-skillset">
+                        <li *ngFor="let skill of firstCandidateSkills" class="skill-bar" style="background-color:#3868A6;" [ngStyle]="{'width': (skill.level + '%') }">
+                            <span>{{skill.name}}</span>
+                            <span class="skill-percent">{{(skill.level/100) | percent}}</span>
+                        </li>      
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 text-center" style="margin-top:15%;">
+            <i class="ti-arrows-horizontal" style="color: #235fdf;"></i>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image red">
+                    <h2 class="text-center white-text" style="vertical-align: middle;">Skills</h2>
+                </div>
+                <div class="content" style="height: 261px; overflow-y: hidden">
+                    <ul class="bean-skillset">
+                        <li *ngFor="let skill of secondCandidateSkills" class="skill-bar" style="background-color:#D03A43;" [ngStyle]="{'width': (skill.level + '%') }">
+                            <span>{{skill.name}}</span>
+                            <span class="skill-percent">{{(skill.level/100) | percent}}</span>
+                        </li>      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-eq-height">
+        <div class="col-lg-12">
+            <div class="card card-user white-background">
+                <div class="image blue">
+                    <h2 class="text-center" style="vertical-align: middle;">
+                        <strong class="white-text">Experience</strong>
+                    </h2>
+                </div>
+                <div class="content" style="height: 500px; overflow-x: hidden">
+                    <experience-timeline [candidateExperience]="firstCandidateExperience"></experience-timeline>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 text-center" style="margin-top:15%;">
+            <i class="ti-arrows-horizontal" style="color: #235fdf;"></i>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card card-user white-background">
+                <div class="image red">
+                    <h2 class="text-center" style="vertical-align: middle;">
+                        <strong class="white-text">Experience</strong>
+                    </h2>
+                </div>
+                <div class="content" style="height: 500px; overflow-x: hidden">
+                    <experience-timeline [candidateExperience]="secondCandidateExperience"></experience-timeline>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-eq-height">
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image blue">
+                    <h2 class="text-center" style="vertical-align: middle;">
+                        <strong class="white-text">Education</strong>
+                    </h2>
+                </div>
+                <div class="content" style="height: 500px; overflow-x: hidden">
+                    <education-timeline [candidateEducation]="firstCandidateEducation"></education-timeline>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 text-center" style="margin-top:15%;">
+            <i class="ti-arrows-horizontal" style="color: #235fdf;"></i>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image red">
+                    <h2 class="text-center" style="vertical-align: middle;">
+                        <strong class="white-text">Education</strong>
+                    </h2>
+                </div>
+                <div class="content" style="height: 500px; overflow-x: hidden">
+                    <education-timeline [candidateEducation]="secondCandidateEducation"></education-timeline>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-eq-height">
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image blue">
+                    <h4 class="text-center">
+                        <strong class="white-text">Languages</strong>
+                    </h4>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Writing</th>
+                                <th>Understanding</th>
+                                <th>Speaking</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let language of firstCandidateLanguages">
+                                <td>{{language.name}}</td>
+                                <td>{{language.writing}}</td>
+                                <td>{{language.understanding}}</td>
+                                <td>{{language.speaking}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 text-center" style="margin-top:15%;">
+            <i class="ti-arrows-horizontal" style="color: #235fdf;"></i>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image red">
+                    <h4 class="text-center">
+                        <strong class="white-text">Languages</strong>
+                    </h4>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Writing</th>
+                                <th>Understanding</th>
+                                <th>Speaking</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let language of secondCandidateLanguages">
+                                <td>{{language.name}}</td>
+                                <td>{{language.writing}}</td>
+                                <td>{{language.understanding}}</td>
+                                <td>{{language.speaking}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row-eq-height">
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image blue">
+                    <h2 class="text-center white-text" style="vertical-align: middle;">Interests</h2>
+                </div>
+                <div class="content" style="height: 261px; overflow-y: hidden">
+                    <dl>
+                        <dd *ngFor="let interest of firstCandidateInterests" style="background-color:#3868A6">
+                            <span>{{interest.name}}</span>
+                        </dd>      
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-2 text-center" style="margin-top:15%;">
+            <i class="ti-arrows-horizontal" style="color: #235fdf;"></i>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="card card-user white-backgound">
+                <div class="image red">
+                    <h2 class="text-center white-text" style="vertical-align: middle;">Interests</h2>
+                </div>
+                <div class="content" style="height: 261px; overflow-y: hidden">
+                    <dl>
+                        <dd *ngFor="let interest of secondCandidateInterests" style="background-color:#D03A43">
+                            <span>{{interest.name}}</span>
+                        </dd>      
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

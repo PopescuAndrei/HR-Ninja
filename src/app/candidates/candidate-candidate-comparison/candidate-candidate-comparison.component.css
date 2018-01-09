@@ -1,0 +1,195 @@
+/*Override panel*/
+.card-user {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24), 0 7px 40px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .image{
+	  height: 70px;
+  }
+  
+  strong {
+	font-weight: bold;
+  }
+  
+  em {
+	color: #959595;
+	font-style: italic;
+  }
+  
+  .tooltip-example {
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	width: 100%;
+  }
+  
+  .tooltip {
+	display: inline;
+	-webkit-perspective: 500px;
+	-moz-perspective: 500px;
+	perspective: 500px;
+  }
+  .tooltip:hover {
+	cursor: pointer;
+  }
+  .tooltip:hover .tooltip__content {
+	-webkit-transform: translate3d(-50%, -10%, 0);
+	-moz-transform: translate3d(-50%, -10%, 0);
+	-ms-transform: translate3d(-50%, -10%, 0);
+	-o-transform: translate3d(-50%, -10%, 0);
+	transform: translate3d(-50%, -10%, 0);
+	opacity: 1;
+	pointer-events: auto;
+  }
+  .tooltip__content {
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	transition: all 200ms ease;
+	-webkit-transform: translate3d(-50%, 0%, 0);
+	-moz-transform: translate3d(-50%, 0%, 0);
+	-ms-transform: translate3d(-50%, 0%, 0);
+	-o-transform: translate3d(-50%, 0%, 0);
+	transform: translate3d(-50%, 0%, 0);
+	-webkit-transform-origin: 0 10px;
+	-moz-transform-origin: 0 10px;
+	-ms-transform-origin: 0 10px;
+	-o-transform-origin: 0 10px;
+	transform-origin: 0 10px;
+	background-color: #fff;
+	border-radius: 4px;
+	color: #2f2f2f;
+	display: block;
+	font-size: 14px;
+	font-weight: normal;
+	left: 50%;
+	opacity: 0;
+	padding: 10px 20px;
+	pointer-events: none;
+	position: absolute;
+	text-align: left;
+	bottom: 100%;
+  }
+  .tooltip__content:before {
+	border-color: transparent;
+	border-top-color: #fff;
+	border-style: solid;
+	border-width: 10px;
+	content: ' ';
+	display: block;
+	height: 0;
+	left: 50%;
+	margin-left: -10px;
+	position: absolute;
+	bottom: -20px;
+	width: 0;
+  }
+  .tooltip__content:after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	height: 20px;
+  }
+  .tooltip__content:hover {
+	-webkit-transform: rotateX(0deg) translate3d(-50%, -10%, 0);
+	-moz-transform: rotateX(0deg) translate3d(-50%, -10%, 0);
+	-ms-transform: rotateX(0deg) translate3d(-50%, -10%, 0);
+	-o-transform: rotateX(0deg) translate3d(-50%, -10%, 0);
+	transform: rotateX(0deg) translate3d(-50%, -10%, 0);
+	opacity: 1;
+	pointer-events: auto;
+  }
+  
+  /* SKILLS */
+  
+  
+  ul.bean-skillset {
+	list-style-type: none;
+	padding-right:0px;
+	padding-left:0px;
+	  float: left;
+	  width: 100%;
+  }
+  
+  .skill-percent { 
+	  float: right; 
+  }
+  
+  li.skill-bar {
+	  background-color: #7BC673;
+	  color: #FFF;
+	font: bold 12px/23px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+	margin-top:5px;
+	  margin-bottom: 5px;
+	  padding: 2px 8px;
+	  width: 300px;	
+	  -webkit-border-radius: 3px;
+		 -moz-border-radius: 3px;
+			  border-radius: 3px;
+	  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+		 -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+			  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3);        
+  }
+	
+  /* Interests */
+  dl {
+	padding: 10px 0 0 10px;
+  }
+  
+  dl dt { 
+	margin-bottom: 20px;
+	font-weight: 600;
+  }
+  
+  dl dd {
+	display: inline-table;
+	width: auto;
+	font-size: 12px;
+	padding: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+	background-color: #c70039;
+	color: white;
+	cursor: pointer;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	margin-left:5px;
+  }
+  
+  ::-webkit-scrollbar {
+	width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+	border-radius: 0;
+	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 0;
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0, 0, 0, 0.3);
+  }
+	
+.ti-arrows-horizontal {
+	vertical-align: middle;
+	font-size: 24px !important;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}

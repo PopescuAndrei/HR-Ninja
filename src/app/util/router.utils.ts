@@ -18,6 +18,7 @@ export class RouterUtils {
 	static likes: string = "/likes";
 	static rating: string = "/rating";
 	static chat: string = "/chat";
+	static otherCandidates: string = "/otherCandidates";
 
 	static positions: string = "/positions";
 	static position: string = "/positions/";
@@ -95,12 +96,20 @@ export class RouterUtils {
 		return this.baseUrl + this.candidate + candidateId + this.chat;
 	}
 
+	static candidateOthersUrl(candidateId: number): string {
+		return this.baseUrl + this.candidate + candidateId + this.otherCandidates;
+	}
+
 	static allSkillsUrl(): string {
 		return this.baseUrl + this.positionRequirements;
 	}
 	
 	static positionsUrl(): string {
 		return this.baseUrl + this.positions;
+	}
+
+	static positionComparisonUrl(): string {
+		return this.baseUrl + this.positions + "/all";
 	}
 
 	static positionUrl(positionId: number): string {

@@ -1,3 +1,4 @@
+import { CandidateCandidateComparisonComponent } from './candidates/candidate-candidate-comparison/candidate-candidate-comparison.component';
 import { PublicPositionViewComponent } from './positions/public-position-view/public-position-view.component';
 import { LoginComponent } from './auth/login/login.component';
 import { EditPositionComponent } from './positions/edit-position/edit-position.component';
@@ -15,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { Routes } from '@angular/router';
 import { SkillsComponent } from './skills/skills.component';
 import { AuthGuardService } from './services/auth.guard.service';
+import { CandidatePositionComparisonComponent } from './candidates/candidate-position-comparison/candidate-position-comparison.component';
 
 export const AppRoutes: Routes = [
     {
@@ -43,6 +45,14 @@ export const AppRoutes: Routes = [
     }, {
         path: 'candidates/:id/chat',
         component: ChatViewComponent,
+        canActivate: [AuthGuardService]
+    }, {
+        path: 'candidates/:fCandidateId/comparison/:sCandidateId',
+        component: CandidateCandidateComparisonComponent,
+        canActivate: [AuthGuardService]
+    }, {
+        path: 'candidates/:id/positionComparison/:positionId',
+        component: CandidatePositionComparisonComponent,
         canActivate: [AuthGuardService]
     }, {
         path: 'positions',

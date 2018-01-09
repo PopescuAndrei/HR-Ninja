@@ -42,6 +42,12 @@ export class PositionsService {
             .map((res: Response) => <Array<Array<Position>>> res.json());
     }
 
+    getPositionsForComparison(): Observable<Array<Position>> {
+        return this.http
+            .get(RouterUtils.positionComparisonUrl())
+            .map((res: Response) => <Array<Position>> res.json());
+    }
+
     getPositionCandidates(positionId: number) : Observable<Array<CandidateScore>> {
         return this.http
             .get(RouterUtils.positionCandidatesUrl(positionId))

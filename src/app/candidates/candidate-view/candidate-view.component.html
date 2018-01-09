@@ -1,4 +1,31 @@
 <div class="container-fluid">
+        <form class="form-horizontal" role="form" [formGroup]="candidateComparisonForm">
+            <div class="form-group">
+                <label class="control-label col-sm-2 red-text" for="otherCandidateId">Candidate Comparison:</label>  
+                <div class="col-md-8 col-sm-8">
+                    <select class="form-control" formControlName="otherCandidateId" placeholder="Choose a candidate to compare with" required>
+                        <option *ngFor="let otherCandidate of otherCandidates" value="{{otherCandidate.id}}">{{otherCandidate.firstName}} {{otherCandidate.lastName}}</option>
+                    </select>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <button class="btn btn-round red white-text" type="submit" value="Compare" (click)="compareWithCandidate()">Compare</button>  
+                </div>
+            </div>
+        </form>
+        <form class="form-horizontal" role="form" [formGroup]="positionComparisonForm">
+            <div class="form-group">
+                <label class="control-label col-sm-2 red-text" for="positionId">Position Comparison:</label>  
+                <div class="col-md-8 col-sm-8">
+                    <select class="form-control" formControlName="positionId" placeholder="Choose a position to compare with" required>
+                        <option *ngFor="let position of positions" value="{{position.id}}">{{position.name}}</option>
+                    </select>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <button class="btn btn-round red white-text" type="submit" value="Compare" (click)="compareWithPosition()">Compare</button>  
+                </div>
+            </div>
+        </form>
+
     <div class="row"><!-- ROW -->
         <div class="col-lg-4 col-md-5">
             <div class="card card-user">

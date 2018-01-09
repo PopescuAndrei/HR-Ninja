@@ -1,3 +1,4 @@
+import { CandidatePositionComparisonComponent } from './candidates/candidate-position-comparison/candidate-position-comparison.component';
 import { AuthGuardService } from './services/auth.guard.service';
 import { SkillsComponent } from './skills/skills.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -39,12 +40,14 @@ import { RoundProgressModule } from 'angular-svg-round-progressbar';
 
 import { DashboardComponent }   from './dashboard/dashboard.component'
 import { PublicPositionViewComponent } from './positions/public-position-view/public-position-view.component';
+import { CandidateCandidateComparisonComponent } from './candidates/candidate-candidate-comparison/candidate-candidate-comparison.component';
 
 @NgModule({
   declarations: [
     AppComponent, DashboardComponent,
     LoginComponent,
     CandidatesComponent, CandidateCardComponent, CommentViewComponent, ChatViewComponent, ExperienceTimelineComponent, EducationTimelineComponent, CandidateViewComponent,
+    CandidateCandidateComparisonComponent, CandidatePositionComparisonComponent,
     PositionsComponent, PositionCardComponent, PositionViewComponent, CreatePositionComponent, EditPositionComponent,
     PublicPositionViewComponent,
     SkillsComponent,
