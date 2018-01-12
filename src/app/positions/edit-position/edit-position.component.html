@@ -9,57 +9,142 @@
 				<p class="card-content-job black-text">{{position?.description}}</p>
       </div>
 
-      <h4 class="red-text">Requirements:</h4>
-      <div class="col-md-12 col-sm-12-col-md-12">
-        <div class="content table-responsive" *ngIf="positionRequirements?.length > 0">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Skill</th>
-                        <th>Level</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let positionRequirement of positionRequirements">
-                        <td>{{positionRequirement.name}}</td>
-                        <td>{{positionRequirement.level}}</td>
-                        <td>
-                            <button type="button" class="btn text-center"><i class="fa fa-trash" aria-hidden="true" (click)="removeSkill(positionRequirement)"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>  
-        <p *ngIf="positionRequirements?.length === 0" class="well no-requirements">
-          No requirements associated with the position 
-          <span class="emoji-highlight">:( </span> 
-          You can start adding just below 
-          <span class="emoji-highlight">;) </span>
-        </p>
+      <div class="border-skills">
+        <h4 class="red-text text-center text-bold"> - Skill Requirements - </h4>
+        <hr class="red" style="height:1px;"/>
+        <div class="col-md-12 col-sm-12 col-md-12">
+          <div class="content table-responsive" *ngIf="positionRequirements?.length > 0">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Skill</th>
+                          <th>Level</th>
+                          <th>Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let positionRequirement of positionRequirements">
+                          <td>{{positionRequirement.name}}</td>
+                          <td>{{positionRequirement.level}}</td>
+                          <td>
+                              <button type="button" class="btn text-center"><i class="fa fa-trash" aria-hidden="true" (click)="removeSkill(positionRequirement)"></i></button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>  
+          <p *ngIf="positionRequirements?.length === 0" class="well no-requirements">
+            No requirements associated with the position 
+            <span class="emoji-highlight">:( </span> 
+            You can start adding just below 
+            <span class="emoji-highlight">;) </span>
+          </p>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px;">
+            <div class="content">
+              <form class="form-horizontal" role="form" [formGroup]="skillForm">
+                <div class="form-group">
+                  <label class="control-label col-sm-2 red-text" for="skillName">Add Skill:</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" formControlName="skillName" placeholder="Choose a skill..." required>
+                      <option *ngFor="let skill of existingSkills" value="{{skill.name}}">{{skill.name}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2 red-text" for="level">Skill level:</label>
+                    <div class="col-sm-10">
+                      <input type="number" step="1" min="0" max="100" class="form-control" formControlName="level" placeholder="Choose the desired skill level: 0-100" required>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-center">
+                  <button class="btn btn-round red white-text" type="submit" value="Add Skill" (click)="addSkill()">Add Skill</button>  
+                </div>
+              </form>
+            </div>
+        </div>
       </div>
 
-      <div class="col-md-12 col-sm-12-col-xs-12">
-        <form class="form-horizontal" role="form" [formGroup]="skillForm">
-          <div class="form-group">
-            <label class="control-label col-sm-2 red-text" for="skillName">Add Skill:</label>
-            <div class="col-sm-10">
-              <select class="form-control" formControlName="skillName" placeholder="Choose a skill..." required>
-                <option *ngFor="let skill of existingSkills" value="{{skill.name}}">{{skill.name}}</option>
-              </select>
+      <div class="border-languages">
+        <h4 class="yellow-text text-center text-bold"> - Language Requirements - </h4>
+        <hr class="yellow" style="height:1px;"/>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="content">
+            <div class="list-item" *ngFor="let lang of positionLanguages">
+              <div class="required-item yellow-text text-bold">{{lang?.name}}
+                  <span class="required-level white-text text-bold text-center yellow">{{lang?.level}}</span>
+              </div>
             </div>
           </div>
-          <div class="form-group">
-              <label class="control-label col-sm-2 red-text" for="level">Skill level:</label>
-              <div class="col-sm-10">
-                <input type="number" step="1" min="0" max="100" class="form-control" formControlName="level" placeholder="Choose the desired skill level: 0-100" required>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px;">
+          <div class="content">
+            <form class="form-horizontal" role="form" [formGroup]="languageForm">
+              <div class="form-group">
+                <label class="control-label col-sm-2 yellow-text" for="">Add Language:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" formControlName="name" placeholder="Choose a language..." required>
+                    <option *ngFor="let lang of existingLanguages" value="{{lang}}">{{lang}}</option>
+                  </select>
+                </div>
               </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2 yellow-text" for="">Set Level:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" formControlName="level" placeholder="Set the level..." required>
+                    <option *ngFor="let level of languageLevels" value="level">{{level}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-sm-12 text-center">
+                <button class="btn btn-round yellow white-text" type="submit" value="Add Language" (click)="addLanguage()">Add Language</button>  
+              </div>
+            </form>  
           </div>
-          <div class="col-sm-12 text-center">
-            <button class="btn btn-round red white-text" type="submit" value="Add Skill" (click)="addSkill()">Add Skill</button>  
-          </div>
-        </form>
+        </div>
       </div>
+
+      <div class="border-experiences">
+        <h4 class="green-text text-center text-bold"> - Experience Requirements - </h4>
+        <hr class="green" style="height:1px;"/>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="content">
+            <div class="list-item" *ngFor="let exp of positionExperiences">
+              <div class="required-item green-text text-bold">{{exp?.title}}
+                  <span class="required-level white-text text-bold text-center green">
+                    {{exp?.years}} years
+                    <button type="button" class="btn red text-center white-text required-button"><i class="fa fa-trash" aria-hidden="true" (click)="removeExperience(exp)"></i></button>
+                  </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom: 20px;">
+          <div class="content">
+            <form class="form-horizontal" role="form" [formGroup]="experienceForm">
+              <div class="form-group">
+                <label class="control-label col-sm-2 green-text" for="">Add experience as:</label>
+                <div class="col-sm-10">
+                  <select class="form-control" formControlName="title" placeholder="Choose a position..." required>
+                    <option *ngFor="let title of jobTitles" value="{{title}}">{{title}}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2 green-text text-bold" for="">Years of exp.:</label>
+                <div class="col-sm-10">
+                    <input type="number" step="1" min="0" max="100" class="form-control" formControlName="years" placeholder="How many years?" required>
+                </div>
+              </div>
+              <div class="col-sm-12 text-center">
+                <button class="btn btn-round green white-text" type="submit" value="Add Experience" (click)="addExperience()">Add Experience</button>  
+              </div>
+            </form>  
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

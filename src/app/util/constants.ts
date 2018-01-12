@@ -1,5 +1,6 @@
 import { Email } from './../domain/support.email';
 import { User } from './../domain/user';
+import { makeDecorator } from '@angular/core/src/util/decorators';
 export const MALE_AVATARS: Array<string> = [
     'assets/img/faces/mCandidate1.png',
     'assets/img/faces/mCandidate2.png',
@@ -30,3 +31,24 @@ export const POSITION_BACKGROUNDS: Array<string> = [
 ]
 
 export const ANONYMOUS_USER = new User(0, "", "", new Email(""), "");
+
+export const LANGUAGE_LEVELS = [
+    'Beginner',
+    'Intermediate',
+    'Very Good',
+    'Expert'
+];
+
+export const JOB_TITLES = [
+    'Developer',
+    'Business Analyst',
+    'Consultant',
+    'Architect',
+    'Team Leader',
+    'Project Manager',
+    'Recruiter',
+    'Financial Advisor',
+    'CFO',
+    'CTO',
+    'CEO'
+]

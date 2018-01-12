@@ -51,7 +51,7 @@ export const AppRoutes: Routes = [
         component: CandidateCandidateComparisonComponent,
         canActivate: [AuthGuardService]
     }, {
-        path: 'candidates/:id/positionComparison/:positionId',
+        path: 'candidates/:candidateId/positionComparison/:positionId',
         component: CandidatePositionComparisonComponent,
         canActivate: [AuthGuardService]
     }, {

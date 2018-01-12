@@ -1,13 +1,6 @@
 import { Router } from '@angular/router';
 import { PositionsService } from './../../services/positions.service';
-import {
-    POSITION_NOT_EXISTING,
-    POSITION_NOT_SAVED,
-    POSITION_SAVED,
-    SKILL_ALREADY_EXISTS,
-    SKILL_NOT_ADDED,
-    SKILLS_SAVED,
-} from './../../util/messages';
+import { POSITION_NOT_EXISTING, POSITION_NOT_SAVED, POSITION_SAVED, SKILL_ALREADY_EXISTS, SKILL_NOT_ADDED } from './../../util/messages';
 import { NotificationService } from './../../services/notification.service';
 import { User } from './../../domain/user';
 import { SkillService } from './../../services/skill.service';

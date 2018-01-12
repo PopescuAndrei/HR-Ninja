@@ -1,5 +1,5 @@
 import { environment } from './../../environments/environment';
-export class RouterUtils {
+export class RestMappings {
 
 	static baseUrl: string =  environment.herokuUrl? "https://recruitingmessbot.herokuapp.com/api" : "http://localhost:8080/api";
 
@@ -103,6 +103,10 @@ export class RouterUtils {
 	static allSkillsUrl(): string {
 		return this.baseUrl + this.positionRequirements;
 	}
+
+	static allLanguagesUrl(): string {
+		return this.baseUrl + this.languages;
+	}
 	
 	static positionsUrl(): string {
 		return this.baseUrl + this.positions;
@@ -136,13 +140,34 @@ export class RouterUtils {
 		return this.positionRequirementsUrl(positionId);
 	}
 
-	static createPositionRequirementsBulkUrl(positionId: number): string {
-		return this.baseUrl + this.position + positionId + this.savePositionRequirementsBulk;
-	}
-
 	static deletePositionRequirementUrl(positionId: number, skillName: string): string {
 		return this.positionRequirementsUrl(positionId) + "/" + skillName;
 	}
+
+	static positionExperiencesUrl(positionId: number): string {
+		return this.baseUrl + this.position + positionId + this.experience;
+	}
+
+	static createPositionExperienceUrl(positionId: number): string {
+		return this.positionExperiencesUrl(positionId);
+	}
+
+	static deletePositionExperienceUrl(positionId: number, title: string): string {
+		return this.positionExperiencesUrl(positionId) + "/" + title;
+	}
+
+	static positionLanguagesUrl(positionId: number): string {
+		return this.baseUrl + this.position + positionId + this.languages;
+	}
+
+	static createPositionLanguageUrl(positionId: number): string {
+		return this.positionLanguagesUrl(positionId);
+	}
+
+	static deletePositionLanguageUrl(positionId: number, lang: string): string {
+		return this.positionLanguagesUrl(positionId) + "/" + lang;
+	}
+
 
 	static positionCandidatesUrl(positionId: number): string {
 		return this.baseUrl + this.position + positionId + this.positionCandidates;

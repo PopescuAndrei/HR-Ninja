@@ -1,6 +1,6 @@
 import { ANONYMOUS_USER } from './../util/constants';
 import { EducationTimelineComponent } from './../candidates/education-timeline/education-timeline.component';
-import { RouterUtils } from './../util/router.utils';
+import { RestMappings } from './../util/router.utils';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Observable, Subject } from 'rxjs/Rx';
 import { EventEmitter, Injectable, Output } from '@angular/core';
@@ -22,7 +22,7 @@ export class AuthService {
 
   login(email: string, password: string): Observable<User> {
     return this.http
-          .post(RouterUtils.authUrl(), {email: email, password:password}, this.options)
+          .post(RestMappings.authUrl(), {email: email, password:password}, this.options)
           .map(
             (res: Response) => {
               localStorage.setItem('currentUser', JSON.stringify(<User> res.json()));

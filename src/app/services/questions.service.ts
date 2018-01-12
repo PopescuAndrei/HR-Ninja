@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs/Rx';
-import { RouterUtils } from './../util/router.utils';
+import { RestMappings } from './../util/router.utils';
 import { Http, Response, RequestOptions, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Question } from '../domain/question';
@@ -19,49 +19,49 @@ export class QuestionsService {
 
     getQuestions(): Observable<Array<Question>> {
         return this.http
-            .get(RouterUtils.questionsUrl())
+            .get(RestMappings.questionsUrl())
             .map((res: Response) => <Array<Question>> res.json());
     }
 
     getQuestion(questionId: number): Observable<Question> {
         return this.http
-            .get(RouterUtils.questionUrl(questionId))
+            .get(RestMappings.questionUrl(questionId))
             .map((res: Response) => <Question> res.json());
     }
 
     getQuestionReplies(questionId: number): Observable<Array<Reply>> {
         return this.http
-            .get(RouterUtils.repliesUrl(questionId))
+            .get(RestMappings.repliesUrl(questionId))
             .map((res: Response) => <Array<Reply>> res.json());
     }
 
     updateQuestion(question: Question): Observable<Question> {
         return this.http
-            .post(RouterUtils.questionUrl(question.id), JSON.stringify(question), this.options)
+            .post(RestMappings.questionUrl(question.id), JSON.stringify(question), this.options)
             .map((res: Response) => <Question> res.json());
     }
 
     updateQuestions(questions: Array<Question>): Observable<Array<Question>> {
         return this.http
-            .post(RouterUtils.updateQuestionsUrl(), JSON.stringify(questions), this.options)
+            .post(RestMappings.updateQuestionsUrl(), JSON.stringify(questions), this.options)
             .map((res: Response) => <Array<Question>> res.json());
     }
 
     addReplyForQuestion(questionId: number, reply: Reply): Observable<Reply> {
         return this.http
-            .post(RouterUtils.createReplyUrl(questionId), JSON.stringify(reply), this.options)
+            .post(RestMappings.createReplyUrl(questionId), JSON.stringify(reply), this.options)
             .map((res: Response) => <Reply> res.json());
     }
 
     removeReply(questionId: number, replyId: number): Observable<Reply> {
         return this.http
-            .delete(RouterUtils.deleteReplyUrl(questionId, replyId))
+            .delete(RestMappings.deleteReplyUrl(questionId, replyId))
             .map((res: Response) => <Reply> res.json());
     }
 
     findProgress(): Observable<boolean> {
         return this.http
-            .get(RouterUtils.findProgressUrl())
+            .get(RestMappings.findProgressUrl())
             .map((res: Response) => <boolean> res.json());
     }
 }

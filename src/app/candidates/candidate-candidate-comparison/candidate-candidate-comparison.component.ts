@@ -79,11 +79,9 @@ export class CandidateCandidateComparisonComponent implements OnInit {
       .subscribe(data => this.firstCandidateLikesNumber = data,
                 error => this.firstCandidateLikesNumber = 20);
 
-
     this.candidateService.getCandidateRating(this.fCandidateId)
       .subscribe(data => this.firstCandidateRating = data,
                 error => this.firstCandidateRating = 4.8);
-
 
     this.candidateService.getCandidateCommentsNumber(this.fCandidateId)
     .subscribe(data => this.firstCandidateCommentsNumber = data,

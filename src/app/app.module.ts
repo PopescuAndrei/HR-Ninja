@@ -1,3 +1,4 @@
+import { LanguageService } from './services/language.service';
 import { CandidatePositionComparisonComponent } from './candidates/candidate-position-comparison/candidate-position-comparison.component';
 import { AuthGuardService } from './services/auth.guard.service';
 import { SkillsComponent } from './skills/skills.component';
@@ -65,7 +66,8 @@ import { CandidateCandidateComparisonComponent } from './candidates/candidate-ca
     FooterModule,
     DragulaModule
   ],
-  providers: [CandidatesService, ChatService, PositionsService, QuestionsService, SkillService,  
+  providers: [CandidatesService, ChatService, PositionsService, QuestionsService, 
+              SkillService, LanguageService,  
               NotificationService, AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })

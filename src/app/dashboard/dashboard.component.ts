@@ -1,4 +1,4 @@
-import { RouterUtils } from './../util/router.utils';
+import { RestMappings } from './../util/router.utils';
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 
