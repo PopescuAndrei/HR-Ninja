@@ -12,6 +12,7 @@ export class RestMappings {
 	static interests: string = "/interests";
 	static experience: string = "/experience";
 	static education: string = "/education";
+	static language: string = "/language";
 	static languages: string = "/languages";
 	static comments: string = "/comments";
 	static commentsNumber: string = "/noComments";
@@ -161,11 +162,11 @@ export class RestMappings {
 	}
 
 	static createPositionLanguageUrl(positionId: number): string {
-		return this.positionLanguagesUrl(positionId);
+		return this.baseUrl + this.position + positionId + this.language;
 	}
 
 	static deletePositionLanguageUrl(positionId: number, lang: string): string {
-		return this.positionLanguagesUrl(positionId) + "/" + lang;
+		return this.baseUrl + this.position + positionId + this.language + "/" + lang;
 	}
 
 

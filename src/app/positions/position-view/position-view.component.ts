@@ -5,6 +5,10 @@ import { Skill } from '../../domain/skill';
 import { Position } from '../../domain/position';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Experience } from '../../domain/experience';
+import { Language } from '../../domain/language';
+import { PositionExperience } from '../../domain/position-experience';
+import { PositionLanguage } from '../../domain/position-language';
 
 @Component({
   selector: 'position-view',
@@ -16,6 +20,8 @@ export class PositionViewComponent implements OnInit {
   private positionId: number;
   private position: Position;
   private positionRequirements: Array<Skill>;
+  private positionLanguages: Array<PositionLanguage>;
+  private positionExperience: Array<PositionExperience>;
   private candidateScores: Array<CandidateScore>;
 
   constructor(private route: ActivatedRoute, private positionsService: PositionsService) { }
@@ -36,5 +42,11 @@ export class PositionViewComponent implements OnInit {
     
     this.positionsService.getPositionRequirements(this.positionId)
       .subscribe(data => this.positionRequirements = data);
+
+    this.positionsService.getPositionLanguages(this.positionId)
+      .subscribe(data => this.positionLanguages = data);
+
+    this.positionsService.getPositionExperience(this.positionId)
+      .subscribe(data => this.positionExperience = data);
   }
 }

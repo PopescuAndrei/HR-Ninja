@@ -2,7 +2,6 @@ import { Router } from '@angular/router';
 import { User } from './../domain/user';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { ChangeDetectionStrategy } from '@angular/core/src/change_detection/constants';
 
 declare var $:any;
 

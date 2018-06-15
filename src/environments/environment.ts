@@ -1,4 +1,4 @@
 export const environment = {
-  production: true,
-  herokuUrl: true
+  production: false,
+  herokuUrl: false
 };

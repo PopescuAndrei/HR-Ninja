@@ -20,7 +20,33 @@
 						</span>
 					</li>
 				</ul>
-				<p *ngIf="positionRequirements?.length === 0">No requirements defined</p>
+				<p *ngIf="positionRequirements?.length === 0">No skills required/defined.</p>
+			</div>
+			<div class="well">
+				<ul class="requirements-list list-no-bullets" *ngIf="positionLanguages?.length > 0">
+					<li *ngFor="let posLanguage of positionLanguages">
+						<i class="ti-check-box"></i>
+						<span>
+							<span class="blue-text">{{posLanguage?.level}}</span>
+							@ 
+							<span>{{posLanguage?.name}}</span>
+						</span>
+					</li>
+				</ul>
+				<p *ngIf="positionLanguages?.length === 0">No languages required/defined.</p>
+			</div>
+			<div class="well">
+				<ul class="requirements-list list-no-bullets" *ngIf="positionExperience?.length > 0">
+					<li *ngFor="let posExperience of positionExperience">
+						<i class="ti-check-box"></i>
+						<span>
+							<span class="blue-text">{{posExperience?.level}}</span>
+							@ 
+							<span>{{posExperience?.name}}</span>
+						</span>
+					</li>
+				</ul>
+				<p *ngIf="positionExperience?.length === 0">No experience required/defined.</p>
 			</div>
 		</div>
 	</div>
